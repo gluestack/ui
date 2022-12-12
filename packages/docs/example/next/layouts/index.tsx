@@ -1,13 +1,45 @@
-// import { DocsLanding } from "@gluestack/docs/docs/landing";
+import Head from "next/head";
+import React, { useEffect, useContext, useState } from "react";
+// import {
+//   Box,
+//   HStack,
+//   Link,
+//   ScrollView,
+//   Text,
+//   useBreakpointValue,
+//   useColorModeValue,
+//   useToken,
+// } from "native-base";
+import path from "path";
 import versionsList from "../versions.json";
-// export default DocsLanding;
+// import Sidebar from "../src/new-components/Sidebar";
+// import Navbar from "../src/new-components/Navbar";
+// import MobileNavbar from "../src/new-components/MobileNavbar";
 
-import React, { useState } from "react";
+// import { AppContext } from "../src/AppContext";
+// import MainContent from "../src/new-components/MainContent";
+
+// import { MobileSidebarVersionDropdown } from "../src/new-components/MobileSidebarVersionDropdown";
+// import { SocialMediaStagger } from "../src/new-components/SocialMediaStagger";
+// import NativebaseIconLogo from "../src/new-components/NativebaseIconLogo";
+import Script from "next/script";
+import { isLatestVersionSlug } from "../lib/docs/utils";
+import MainContent from "../docs-components/MainContent";
 import Link from "next/link";
-import { useRouter } from "solito/router";
+import Sidebar from "../docs-components/Sidebar";
 
-export default function Hello() {
-  const router = useRouter();
+function Layout({
+  children: content,
+  version: currentVersion,
+  tocArray,
+  sidebar,
+  versionList,
+  frontMatter,
+  pages,
+  showToc,
+  youtubeEmbedd,
+}: any) {
+  const pageTitle = "hello vidhi kataria page title";
   const [isOpen, setOpen] = useState(false);
   const [versions, setVerions] = useState(versionsList);
 
@@ -100,3 +132,5 @@ export default function Hello() {
     </>
   );
 }
+
+export default Layout;

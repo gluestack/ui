@@ -7,7 +7,9 @@ export function DocsButton() {
   return (
     <Link href="/button2">
       <Button disabled sx={{ style: { bg: "$primary.500" } }}>
-        <ButtonText sx={{ style: { color: "$red.500" } }}>Button 1!</ButtonText>
+        <ButtonText sx={{ style: { color: "$red.500" } }}>
+          Button 1.0.x!
+        </ButtonText>
       </Button>
       {/* <Text>Hello from Button 1</Text> */}
     </Link>

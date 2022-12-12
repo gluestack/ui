@@ -1,8 +1,8 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { DocsLanding } from "../../docs/landing";
-import { DocsButton2 } from "../../docs/button/button";
-import { DocsHeading } from "../../docs/heading";
+// import { DocsButton2 } from "../../docs/button/button";
+// import { DocsHeading } from "../../docs/heading";
 
 const Stack = createNativeStackNavigator<{
   landing: any;
@@ -24,7 +24,7 @@ export function NativeNavigation() {
           title: "Landing",
         }}
       />
-      <Stack.Screen
+      {/* <Stack.Screen
         name="button2"
         component={DocsButton2}
         options={{
@@ -37,7 +37,7 @@ export function NativeNavigation() {
         options={{
           title: "Heading",
         }}
-      />
+      /> */}
     </Stack.Navigator>
   );
 }

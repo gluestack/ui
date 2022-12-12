@@ -1,10 +1,12 @@
 import { Provider } from "@gluestack/docs/provider";
 import Head from "next/head";
 import React from "react";
+import "../styles/globals.css";
 import type { SolitoAppProps } from "solito";
 import "raf/polyfill";
 
 function MyApp({ Component, pageProps }: SolitoAppProps) {
+  console.log("HEERE");
   return (
     <>
       <Head>
