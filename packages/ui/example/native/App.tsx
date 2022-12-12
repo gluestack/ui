@@ -11,6 +11,7 @@ import {
   StyledVStackSpacer,
   StyledHStack,
   StyledHStackSpacer,
+  StyledBoxText,
 } from "./components";
 import {
   ButtonBasicExample,
@@ -40,6 +41,7 @@ export default function App() {
         StyledButton,
         StyledButtonText,
         StyledBox,
+        StyledBoxText,
         StyledHeading,
         StyledText,
         StyledCenter,
