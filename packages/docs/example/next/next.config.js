@@ -7,10 +7,25 @@ const nextConfig = {
   resolve: {
     "@gluestack/docs": path.resolve(__dirname, "../../"),
   },
+  webpack: (config, { isServer }) => {
+    config.resolve.fallback = { fs: false };
+
+    return config;
+  },
+  async redirects() {
+    return [
+      {
+        source: "/",
+        destination: "/1.0.x",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 const { withExpo } = require("@expo/next-adapter");
 const withPlugins = require("next-compose-plugins");
+const { redirect } = require("next/dist/server/api-utils");
 const withTM = require("next-transpile-modules")(["solito", "@gluestack/docs"]);
 
 module.exports = withPlugins(

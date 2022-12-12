@@ -1,12 +1,24 @@
 import { Provider } from "@gluestack/docs/provider";
 import Head from "next/head";
-import React from "react";
+import React, { useState } from "react";
 import "../styles/globals.css";
 import type { SolitoAppProps } from "solito";
 import "raf/polyfill";
+import Layout from "layouts";
+import { versions } from "../versions.json";
 
 function MyApp({ Component, pageProps }: SolitoAppProps) {
-  console.log("HEERE");
+  const [version, setVersion]: any = useState(Object.keys(versions[0])[0]);
+
+  function getSidebarJsonData() {
+    for (let i = 0; i < versions.length; i++) {
+      if (Object.keys(versions[i])[0] == version) {
+        return versions[i];
+      }
+    }
+  }
+  console.log("Loaded", version);
+
   return (
     <>
       <Head>
@@ -18,7 +30,13 @@ function MyApp({ Component, pageProps }: SolitoAppProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Provider>
-        <Component {...pageProps} />
+        <Layout
+          version={version}
+          versionInfo={getSidebarJsonData()}
+          setVersion={setVersion}
+        >
+          <Component {...pageProps} />
+        </Layout>
       </Provider>
     </>
   );

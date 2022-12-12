@@ -1,1 +1,64 @@
-["1.0.x", "1.1.x"]
+{
+  "versions": [
+    {
+      "1.0.x": {
+        "sidebar": [
+          {
+            "type": "heading",
+            "title": "Components",
+            "pages": [
+              {
+                "id": "button",
+                "title": "Button"
+              },
+              {
+                "id": "heading",
+                "title": "Heading"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "1.1.x": {
+        "sidebar": [
+          {
+            "type": "heading",
+            "title": "Components",
+            "pages": [
+              {
+                "id": "button",
+                "title": "Button1"
+              },
+              {
+                "id": "heading",
+                "title": "Heading2"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "1.2.x": {
+        "sidebar": [
+          {
+            "type": "heading",
+            "title": "Components",
+            "pages": [
+              {
+                "id": "button",
+                "title": "Button3"
+              },
+              {
+                "id": "heading",
+                "title": "Heading3"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

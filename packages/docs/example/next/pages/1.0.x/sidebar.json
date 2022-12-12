@@ -1,0 +1,20 @@
+{
+  "sidebarData": {
+    "sidebar": [
+      {
+        "type": "heading",
+        "title": "Components",
+        "pages": [
+          {
+            "id": "button",
+            "title": "Button"
+          },
+          {
+            "id": "heading",
+            "title": "Heading"
+          }
+        ]
+      }
+    ]
+  }
+}
