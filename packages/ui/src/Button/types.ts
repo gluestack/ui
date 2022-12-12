@@ -1,7 +1,7 @@
 import type { PressableProps } from "react-native";
-import type { SxProps } from "@gluestack/styled";
+import type { StyleProps, StylePropsAliases, SxProps } from "@gluestack/styled";
 
-interface IButtonProps extends PressableProps {
+interface IButtonProps extends PressableProps, StyleProps<StylePropsAliases> {
   /**
    * Called when a mouse enters the Pressable
    */
@@ -22,6 +22,9 @@ interface IButtonProps extends PressableProps {
   resolveContextChildrenStyle?: Array<SxProps>;
   children?: React.ReactNode;
   variant: "greenBox" | "blueBox";
+  _hover: any;
+  _active: any;
+  _focus: any;
 }
 
 export type ButtonProps = Partial<IButtonProps>;

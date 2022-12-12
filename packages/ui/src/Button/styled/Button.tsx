@@ -5,9 +5,9 @@ export default styled(
   {
     baseStyle: {
       style: {
-        bg: "$red.500",
-        px: "$4",
-        py: "$3",
+        // bg: "$red.500",
+        // px: "$4",
+        // py: "$3",
         // w: 400,}
       },
       state: {
@@ -27,7 +27,7 @@ export default styled(
     },
     variants: {
       blueBox: {
-        style: { bg: "$secondary.500" },
+        // style: { bg: "$secondary.500" },
         state: {
           hover: { style: { bg: "$primary.600" } },
           focus: { style: { borderWidth: 1, borderColor: "$primary.300" } },
@@ -37,7 +37,7 @@ export default styled(
       },
       greenBox: {
         style: {
-          bg: "$secondary.500",
+          // bg: "$secondary.500",
         },
         // px: "$10",
       },

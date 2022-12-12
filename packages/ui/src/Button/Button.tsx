@@ -2,6 +2,7 @@ import { useFocusRing } from "@react-native-aria/focus";
 import StyledButton from "./styled/Button";
 import React, { createContext, useState } from "react";
 import type { ButtonProps } from "./types";
+import { useUtilityPropsResolver } from "../hooks/useUtilityPropsResolver";
 export const ButtonContext = createContext<any>({});
 
 export const useHover = () => {
@@ -50,6 +51,7 @@ function composeEventHandlers<E>(
 export function Button({
   children,
   resolveContextChildrenStyle,
+  sx,
   ...props
 }: ButtonProps) {
   // ref: any
@@ -58,6 +60,10 @@ export function Button({
   let { isFocused, focusProps } = useFocus();
   const { isHovered, hoverProps }: any = useHover();
 
+  const [modifiedSxProps, ignoredProps] = useUtilityPropsResolver(sx, props);
+
+  console.log(modifiedSxProps, ignoredProps, "modifiedSxProps, ignoredProps");
+
   return (
     <StyledButton
       states={{
@@ -65,7 +71,8 @@ export function Button({
         focus: isFocused,
         active: isPressed,
       }}
-      {...props}
+      sx={{ ...modifiedSxProps }}
+      {...ignoredProps}
       onPressIn={composeEventHandlers(
         props?.onPressIn,
         pressableProps.onPressIn
