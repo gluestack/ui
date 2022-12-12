@@ -64,67 +64,7 @@ function resolveUtilityProps(
       }
     }
   });
-
-  console.log(sxProps, "sxProps");
 }
-
-// function resolveUtilityProps1(
-//   sxProps: any = {},
-//   utilityProps: any,
-//   parent: any = ""
-// ) {
-//   Object.keys(utilityProps).forEach((property) => {
-//     if (Object.keys(utilityProps[property]).length === 1) {
-//       if (parent === "") {
-//         sxProps.style = {
-//           [property]: utilityProps[property],
-//           ...sxProps?.style,
-//         };
-//       }
-//       return;
-//     }
-//     if (UTILITY_PROPS_MAP.state[property]) {
-//       if (sxProps?.state?.[UTILITY_PROPS_MAP.state[property]]?.style) {
-//         sxProps.state[UTILITY_PROPS_MAP.state[property]].style = {
-//           ...utilityProps[property],
-//           ...sxProps.state[UTILITY_PROPS_MAP.state[property]]?.style,
-//         };
-//       } else {
-//         sxProps.state[UTILITY_PROPS_MAP.state[property]] = {
-//           style: { ...utilityProps[property] },
-//         };
-//       }
-//       delete utilityProps[property];
-//     }
-//     if (UTILITY_PROPS_MAP.platform[property]) {
-//       if (sxProps?.platform?.[UTILITY_PROPS_MAP.platform[property]]?.style) {
-//         sxProps.platform[UTILITY_PROPS_MAP.platform[property]].style = {
-//           ...utilityProps[property],
-//           ...sxProps.platform[UTILITY_PROPS_MAP.platform[property]]?.style,
-//         };
-//       } else {
-//         sxProps.platform[UTILITY_PROPS_MAP.platform[property]] = {
-//           style: { ...utilityProps[property] },
-//         };
-//       }
-//       delete utilityProps[property];
-//     }
-//     if (UTILITY_PROPS_MAP.colorMode[property]) {
-//       if (sxProps?.colorMode?.[UTILITY_PROPS_MAP.colorMode[property]]?.style) {
-//         sxProps.colorMode[UTILITY_PROPS_MAP.colorMode[property]].style = {
-//           ...utilityProps[property],
-//           ...sxProps.colorMode[UTILITY_PROPS_MAP.colorMode[property]]?.style,
-//         };
-//       } else {
-//         sxProps.colorMode[UTILITY_PROPS_MAP.colorMode[property]] = {
-//           style: { ...utilityProps[property] },
-//         };
-//       }
-//       delete utilityProps[property];
-//     }
-//   });
-//   // return sxProps;
-// }
 
 export function useUtilityPropsResolver(
   sxProps: any = {},
@@ -143,8 +83,6 @@ export function useUtilityPropsResolver(
   } else {
     sxProps.style = { ...cleanIncomingProps };
   }
-
-  console.log(sxProps, ignoredProps, "&&&&&");
 
   return [sxProps, ignoredProps];
 }

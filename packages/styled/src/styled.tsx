@@ -278,109 +278,6 @@ export function omitUndefined(obj: any) {
   return omitBy(obj, isNil);
 }
 
-export function extractInObject(parent: any, values: Array<string>) {
-  return [
-    omitUndefined(pick(parent, values)),
-    omitUndefined(omit(parent, values)),
-  ];
-}
-
-const UTILITY_PROPS_MAP: any = {
-  state: {
-    _hover: "hover",
-    _active: "active",
-    _focus: "focus",
-  },
-  platform: {
-    _web: "web",
-    _android: "android",
-    _ios: "ios",
-  },
-  colorMode: {
-    _light: "light",
-    _dark: "dark",
-  },
-};
-
-const ignoredComponentProps = [
-  "children",
-  "onPress",
-  "onBlur",
-  "onFocus",
-  "onHoverIn",
-  "onHoverOut",
-  "onPressIn",
-  "onPressOut",
-];
-
-function resolveUtilityProps(sxProps: any = {}, utilityProps: any) {
-  Object.keys(utilityProps).forEach((property) => {
-    if (UTILITY_PROPS_MAP.state[property]) {
-      if (sxProps?.state?.[UTILITY_PROPS_MAP.state[property]]?.style) {
-        sxProps.state[UTILITY_PROPS_MAP.state[property]].style = {
-          ...utilityProps[property],
-          ...sxProps.state[UTILITY_PROPS_MAP.state[property]]?.style,
-        };
-      } else {
-        sxProps.state[UTILITY_PROPS_MAP.state[property]] = {
-          style: { ...utilityProps[property] },
-        };
-      }
-      delete utilityProps[property];
-    }
-    if (UTILITY_PROPS_MAP.platform[property]) {
-      if (sxProps?.platform?.[UTILITY_PROPS_MAP.platform[property]]?.style) {
-        sxProps.platform[UTILITY_PROPS_MAP.platform[property]].style = {
-          ...utilityProps[property],
-          ...sxProps.platform[UTILITY_PROPS_MAP.platform[property]]?.style,
-        };
-      } else {
-        sxProps.platform[UTILITY_PROPS_MAP.platform[property]] = {
-          style: { ...utilityProps[property] },
-        };
-      }
-      delete utilityProps[property];
-    }
-    if (UTILITY_PROPS_MAP.colorMode[property]) {
-      if (sxProps?.colorMode?.[UTILITY_PROPS_MAP.colorMode[property]]?.style) {
-        sxProps.colorMode[UTILITY_PROPS_MAP.colorMode[property]].style = {
-          ...utilityProps[property],
-          ...sxProps.colorMode[UTILITY_PROPS_MAP.colorMode[property]]?.style,
-        };
-      } else {
-        sxProps.colorMode[UTILITY_PROPS_MAP.colorMode[property]] = {
-          style: { ...utilityProps[property] },
-        };
-      }
-      delete utilityProps[property];
-    }
-  });
-  // return sxProps;
-}
-
-function utilityPropsResolution(
-  sxProps: any = {},
-  utilityProps: any,
-  config?: any
-) {
-  const [ignoredProps, cleanIncomingProps] = extractInObject(
-    utilityProps,
-    ignoredComponentProps.concat(config?.ignoreProps || [])
-  );
-
-  resolveUtilityProps(sxProps, cleanIncomingProps);
-
-  if (sxProps.style) {
-    sxProps.style = { ...cleanIncomingProps, ...sxProps?.style };
-  } else {
-    sxProps.style = { ...cleanIncomingProps };
-  }
-
-  console.log(sxProps, ignoredProps, "&&&&&");
-
-  return [sxProps, ignoredProps];
-}
-
 export function styled<P>(
   Component: React.ComponentType<P> & SxProps,
   theme: ThemeType,
@@ -395,14 +292,6 @@ export function styled<P>(
     let { children, sx, variant, size, states, colorMode, ...props } =
       mergedProps;
 
-    // const [modifiedSxProps, ignoredProps] = utilityPropsResolution(sx, props);
-
-    // console.log(
-    //   modifiedSxProps,
-    //   ignoredProps,
-    //   "modifiedSxPropsWithUtilityProps"
-    // );
-
     const newStyle = resolveSx(
       {
         sx,
@@ -413,9 +302,6 @@ export function styled<P>(
       },
       theme
     );
-
-    console.log(newStyle, "***");
-    console.log("Changed", sx, props);
 
     const styleSheetObj = StyleSheet.create(newStyle.styleSheetsObj);
 

@@ -62,8 +62,6 @@ export function Button({
 
   const [modifiedSxProps, ignoredProps] = useUtilityPropsResolver(sx, props);
 
-  console.log(modifiedSxProps, ignoredProps, "modifiedSxProps, ignoredProps");
-
   return (
     <StyledButton
       states={{
