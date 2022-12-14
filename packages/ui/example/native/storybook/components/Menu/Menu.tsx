@@ -33,25 +33,24 @@ export const MenuComponent = (props: any) => {
         <Button
           ref={targetRef}
           onPress={() => setShowMenu(true)}
-          sx={{
-            style: {
-              backgroundColor: '$red.100',
-              alignSelf: 'flex-start',
-            },
-          }}
+          // sx={{
+          //   style: {
+          //     backgroundColor: '$red.100',
+          //     alignSelf: 'flex-start',
+          //   },
+          // }}
         >
           Trigger me
         </Button>
         {/* </Center> */}
         <Menu
-          placement="bottom"
           isOpen={showMenu}
           onClose={() => {
             setShowMenu(false);
           }}
           triggerRef={targetRef}
         >
-          <Menu.Backdrop />
+          {/* <Menu.Backdrop /> */}
           {/* <Menu.Content maxH="212"> */}
           <Menu.Item>Item 1</Menu.Item>
           <Menu.Item>Item 2</Menu.Item>

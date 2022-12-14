@@ -7,7 +7,7 @@ export default styled(
   {
     baseStyle: {
       style: {
-        bg: '$gray.900',
+        bg: '$gray.300',
         padding: 8,
         borderRadius: 4,
         w: 190,

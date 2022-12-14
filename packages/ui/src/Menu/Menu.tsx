@@ -61,6 +61,7 @@ const Menu = (
           triggerRef={triggerRef}
           onClose={handleClose}
           placement={placement}
+          {...restProps}
         >
           <MenuBackdrop onPress={handleClose} />
           <Popper.Content isOpen={isOpen}>

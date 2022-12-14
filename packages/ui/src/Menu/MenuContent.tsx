@@ -4,14 +4,19 @@ import { UIContext } from '../UIProvider';
 import { useMenu, useMenuTypeahead } from './useMenu';
 
 export const MenuContent = ({ menuRef, children, ...props }: any) => {
-  const { StyledMenu } = React.useContext(UIContext);
+  const { StyledMenuContent } = React.useContext(UIContext);
 
   const menuProps = useMenu();
   const typeaheadProps = useMenuTypeahead(menuProps);
   return (
-    <StyledMenu {...props} {...menuProps} {...typeaheadProps} ref={menuRef}>
+    <StyledMenuContent
+      {...props}
+      {...menuProps}
+      {...typeaheadProps}
+      ref={menuRef}
+    >
       <ScrollView>{children}</ScrollView>
-    </StyledMenu>
+    </StyledMenuContent>
   );
 };
 
