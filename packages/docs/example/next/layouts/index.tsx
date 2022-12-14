@@ -23,7 +23,6 @@ import versionsList from "../versions.json";
 // import { SocialMediaStagger } from "../src/new-components/SocialMediaStagger";
 // import NativebaseIconLogo from "../src/new-components/NativebaseIconLogo";
 import Script from "next/script";
-import { isLatestVersionSlug } from "../lib/docs/utils";
 import MainContent from "../components/MainContent";
 import Link from "next/link";
 import Sidebar from "components/Sidebar";

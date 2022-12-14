@@ -59,26 +59,19 @@ export default function Sidebar(props: any) {
 
   const [collapseShow, setCollapseShow] = React.useState("hidden");
   return (
-    <Suspense fallback={`Loading...`}>
-      <nav className="md:left-0 fixed md:h-full md:overflow-y-auto md:flex-row md:flex-nowrap shadow-xl bg-white flex flex-wrap items-center justify-between relative md:w-80 z-10 ">
-        <div className="md:flex-col md:items-stretch overflow-hidden md:min-h-full md:flex-nowrap px-0 flex flex-wrap items-center justify-between w-full">
-          {/* Toggler */}
-          <button
-            className="cursor-pointer text-black opacity-50 md:hidden px-3 py-1 text-xl leading-none bg-red-300 rounded border border-solid border-transparent"
-            type="button"
-            onClick={() => setCollapseShow("bg-white m-2 py-3 px-6")}
-          >
-            <i className="fas fa-bars">knkn</i>
-          </button>
-          <div className="pt-4">
-            {props.sidebar.map((sidebarItem: any) => {
-              return (
-                <div className="mt-4 ">
-                  <SidebarItems props={sidebarItem} version={props.version} />
-                </div>
-              );
-            })}
-            {/* {props.sidebar.map((item) => {
+    <nav className="md:left-0 fixed md:h-full md:overflow-y-auto md:flex-row md:flex-nowrap shadow-xl bg-white flex flex-wrap items-center justify-between relative md:w-80 z-10 ">
+      <div className="md:flex-col md:items-stretch overflow-hidden md:min-h-full md:flex-nowrap px-0 flex flex-wrap items-center justify-between w-full">
+        {/* Toggler */}
+
+        <div className="pt-4">
+          {props.sidebar.map((sidebarItem: any) => {
+            return (
+              <div className="mt-4 ">
+                <SidebarItems props={sidebarItem} version={props.version} />
+              </div>
+            );
+          })}
+          {/* {props.sidebar.map((item) => {
               return (
                 <div className=" py-3 ">
                   {item?.type == "heading" && (
@@ -92,10 +85,9 @@ export default function Sidebar(props: any) {
                 </div>
               );
             })} */}
-          </div>
         </div>
-      </nav>
-    </Suspense>
+      </div>
+    </nav>
   );
 }
 
