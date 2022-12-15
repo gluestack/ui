@@ -1,7 +1,7 @@
 // import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, Pressable } from 'react-native';
 
-import { styled } from '@gluestack/styled';
+import { styled, useToken } from '@gluestack/styled';
 
 const Box = styled(
   View,
@@ -40,22 +40,17 @@ const Box = styled(
 );
 
 export default function App() {
+  const padding = useToken('spacing', '$6');
+  console.log(padding, 'x');
+
   return (
     <View style={styles.container}>
       <Box
-      // variant="greenBox"
-      // states={{
-      //   hover: false,
-      // }}
-      // sx={{
-      //   state: {
-      //     hover: {
-      //       style: {
-      //         bg: "$red.500",
-      //       },
-      //     },
-      //   },
-      // }}
+        sx={{
+          style: {
+            px: padding,
+          },
+        }}
       >
         Hello Box
       </Box>
