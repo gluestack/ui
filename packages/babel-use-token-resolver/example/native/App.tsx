@@ -1,17 +1,15 @@
 // import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, Pressable } from 'react-native';
 
-import { styled, useToken } from '@gluestack/styled';
+import { styled as xyz, useToken } from '@gluestack/styled';
 
-const Box = styled(
+const Box = xyz(
   View,
   {
     baseStyle: {
       style: {
-        bg: '#000',
-        p: 6,
-        h: '$10',
-        rounded: '$full',
+        bg: '$primary.500',
+        p: '$3',
       },
       state: {
         hover: {
@@ -24,12 +22,12 @@ const Box = styled(
     variants: {
       greenBox: {
         style: {
-          bg: '$secondary.500',
+          bg: '$red.500',
         },
         state: {
           hover: {
             style: {
-              bg: '$primary.600',
+              bg: '$red.100',
             },
           },
         },
@@ -40,17 +38,28 @@ const Box = styled(
 );
 
 export default function App() {
-  const padding = useToken('spacing', '$6');
-  console.log(padding, 'x');
-
+  const MyToken = useToken(
+    'color',
+    ['$red.500', '$red.800', '$blue.600'],
+    ['', '', 'fallbackcolor']
+  );
+  console.log(MyToken, '####');
   return (
     <View style={styles.container}>
       <Box
-        sx={{
-          style: {
-            px: padding,
-          },
-        }}
+      // variant="greenBox"
+      // states={{
+      //   hover: false,
+      // }}
+      // sx={{
+      //   state: {
+      //     hover: {
+      //       style: {
+      //         bg: "$red.500",
+      //       },
+      //     },
+      //   },
+      // }}
       >
         Hello Box
       </Box>
