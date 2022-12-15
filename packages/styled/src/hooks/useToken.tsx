@@ -22,6 +22,8 @@ export function useToken<T extends string | number>(
           return tokens?.[property]?.[originalToken] ?? fallbackArr[index];
         }
       }
+
+      return currentToken;
     });
   } else {
     if (typeof token === 'string' && token?.startsWith('$')) {
@@ -34,4 +36,6 @@ export function useToken<T extends string | number>(
       }
     }
   }
+
+  return token;
 }
