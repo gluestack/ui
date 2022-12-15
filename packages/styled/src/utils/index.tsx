@@ -1,0 +1,1 @@
+export { addOpacityToHex } from './getColors';

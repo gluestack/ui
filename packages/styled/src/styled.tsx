@@ -9,6 +9,7 @@ import type {
   SxProps,
   ThemeType,
 } from './types';
+import { addOpacityToHex } from './utils';
 
 function resolveAliasesFromConfig(config: any, props: any) {
   const aliasResolvedProps: any = {};
@@ -25,22 +26,35 @@ function resolveAliasesFromConfig(config: any, props: any) {
 
 function resolveTokensFromConfig(config: any, props: any) {
   const newProps: any = {};
-
   Object.keys(props).map((prop: any) => {
     const value = props[prop];
-
     const configAlias = config?.aliases?.[prop]?.scale;
     const tokenPath = config?.tokens?.[configAlias];
-    let token;
 
+    function getColorToken(value: string) {
+      if (value.includes('.')) {
+        const [tokenA, tokenB] = value.split('.');
+        return tokenPath?.[tokenA]?.[tokenB] ?? value;
+      }
+      return tokenPath?.[value] ?? value;
+    }
+    let token;
     if (typeof value === 'string' && value.startsWith('$')) {
       const originalValue = value.slice(1);
-
-      if (value.includes('.')) {
-        const [tokenA, tokenB] = originalValue.split('.');
-        token = tokenPath?.[tokenA]?.[tokenB] ?? value;
+      if (originalValue.includes(':')) {
+        let alphaValue = 100;
+        const [color, alpha] = originalValue.split(':');
+        const colorToken = getColorToken(color);
+        if (alpha.includes('.')) {
+          const [_, opacity] = alpha.split('.');
+          const parsedValue = Number(opacity);
+          if (parsedValue >= 0 && parsedValue <= 100) {
+            alphaValue = parsedValue;
+          }
+        }
+        token = addOpacityToHex(colorToken, alphaValue / 100);
       } else {
-        token = tokenPath?.[originalValue] ?? value;
+        token = getColorToken(value);
       }
     } else {
       token = value;
