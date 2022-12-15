@@ -38,12 +38,12 @@ const Box = xyz(
 );
 
 export default function App() {
-  const kardiaHeReplaceIsko = useToken(
+  const MyToken = useToken(
     'color',
     ['$red.500', '$red.800', '$blue.600'],
     ['', '', 'fallbackcolor']
   );
-  console.log(kardiaHeReplaceIsko, '####');
+  console.log(MyToken, '####');
   return (
     <View style={styles.container}>
       <Box
