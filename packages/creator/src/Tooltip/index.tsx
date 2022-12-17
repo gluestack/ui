@@ -1,8 +1,8 @@
-import { TooltipText } from './TooltipText';
+import { TooltipContent } from './TooltipContent';
 import { Tooltip } from './Tooltip';
 
-export const createTooltip = ({ StyledTooltip, StyledTooltipText }: any) => {
-  const TooltipTemp = Tooltip(StyledTooltip) as any;
-  TooltipTemp.Text = TooltipText(StyledTooltipText);
+export const createTooltip = ({ StyledTooltipContent }: any) => {
+  const TooltipTemp = Tooltip() as any;
+  TooltipTemp.Content = TooltipContent(StyledTooltipContent);
   return TooltipTemp;
 };

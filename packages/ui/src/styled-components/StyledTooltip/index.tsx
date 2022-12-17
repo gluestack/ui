@@ -15,7 +15,7 @@ export default styled(
         //   color: `text50`,
         // },
         // @ts-ignore
-        bg: `muted800`,
+        bg: `$muted800`,
         // _dark: {
         //   bg: `muted50`,
         //   _text: {
