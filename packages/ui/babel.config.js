@@ -16,6 +16,7 @@ module.exports = function (api) {
                   '../creator/src'
                 ),
                 ['@gluestack/ui']: path.join(__dirname, './src'),
+                ['@gluestack/popper']: path.join(__dirname, '../popper/src'),
               },
             },
           ]

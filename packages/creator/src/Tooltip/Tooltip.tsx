@@ -3,9 +3,8 @@ import { useControllableState, useKeyboardDismissable } from '../hooks';
 import { PresenceTransition } from '../Transitions';
 import { StyleSheet } from 'react-native';
 import { Overlay } from '../Overlay';
-import { Popper } from '@gluestack/popper';
 
-const Tooltip = () =>
+const Tooltip = (StyledTooltip: any) =>
   forwardRef(
     ({
       triggerRef,
@@ -16,7 +15,6 @@ const Tooltip = () =>
       placement = 'bottom',
       offset,
       hasArrow = true,
-      arrowSize = 12,
       isOpen: isOpenProp,
     }: any) => {
       if (hasArrow && offset === undefined) {
@@ -40,19 +38,9 @@ const Tooltip = () =>
       return (
         <Overlay isOpen={isOpen} useRNModalOnAndroid unmountOnExit>
           <PresenceTransition visible={isOpen} style={StyleSheet.absoluteFill}>
-            <Popper triggerRef={triggerRef} placement={placement}>
-              <Popper.Content>
-                {hasArrow && (
-                  <Popper.Arrow
-                    borderColor="transparent"
-                    // backgroundColor={arrowBg}
-                    height={arrowSize}
-                    width={arrowSize}
-                  />
-                )}
-                {children}
-              </Popper.Content>
-            </Popper>
+            <StyledTooltip triggerRef={triggerRef} placement={placement}>
+              {children}
+            </StyledTooltip>
           </PresenceTransition>
         </Overlay>
       );

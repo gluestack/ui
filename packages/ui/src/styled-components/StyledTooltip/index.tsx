@@ -1,8 +1,9 @@
+import { Popper } from '@gluestack/popper';
 import { styled } from '@gluestack/ui-styled';
-import { View } from 'react-native';
+// import { View } from 'react-native';
 
 export default styled(
-  View,
+  Popper,
   {
     baseStyle: {
       style: {

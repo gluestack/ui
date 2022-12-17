@@ -120,3 +120,4 @@ export { default as StyledProgressFilledTrack } from './StyledProgress/StyledPro
 //Tooltip
 export { default as StyledTooltip } from './StyledTooltip';
 export { default as StyledTooltipContent } from './StyledTooltip/StyledTooltipContent';
+export { default as StyledTooltipArrow } from './StyledTooltip/StyledTooltipArrow';

@@ -20,6 +20,7 @@ export const Example = ({ ...props }) => {
         <Text sx={{ style: { bg: '$red500' } }}>hello</Text>
       </Button>
       <Tooltip isOpen={isOpen} triggerRef={targetRef}>
+        <Tooltip.Arrow />
         <Tooltip.Content sx={{ style: { bg: '$red500' } }}>
           <Box>
             <Text>dhhd</Text>
