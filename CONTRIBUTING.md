@@ -108,7 +108,7 @@ with quickly:
 - Add main repo remote:
 
   ```git
-  git remote add gluestack git@github.com:gluestack.git
+  git remote add gluestack git@github.com:gluestack/ui.git
   ```
 
 - Install dependencies:
@@ -120,7 +120,7 @@ with quickly:
 - Move over to the TestBed Example App and install the dependencies :
 
   ```bash
-  cd example
+  cd ui
   yarn
   ```
 
@@ -130,34 +130,34 @@ with quickly:
   cd ..
   ```
 
-- Start the Example App:
+- Start the Example Storybook App:
 
   ```bash
-  yarn example start
+  yarn storybook
   ```
 
   - To start app directly on Web
     ```bash
-    yarn example web
+    yarn web
     ```
   - To start app directly on IOS
     ```bash
-    yarn example ios
+    yarn ios
     ```
   - To start app directly on Android
     ```bash
-    yarn example android
+    yarn android
     ```
 
 and start making the changes.
 
 ## <a name="submit-pr"></a> Contributing Code
 
-Code-level contributions to Gluestack UI come in the form of [pull requests](https://help.github.com/en/articles/about-pull-requests). These are done by forking the repo and making changes locally. Directly in the repo, there is the [`Storybook Testbed` app](/packages/ui) that you can run on your device (or simulators) and use to test the changes you're making to Gluestack UI source.
+Code-level contributions to Gluestack UI come in the form of [pull requests](https://help.github.com/en/articles/about-pull-requests). These are done by forking the repo and making changes locally. Directly in the repo, there is the [`Storybook Testbed`](/packages/ui) app that you can run on your device (or simulators) and use to test the changes you're making to Gluestack UI source.
 
 The process of proposing a change to Gluestack UI can be summarized as follows:
 
-1. Fork the Gluestack repository and create your branch from `master`.
+1. Fork the gluestack/ui repository and create your branch from `master`.
 2. Make the desired changes to Gluestack source. Use the `Storybook Testbed` app to test them out.
 3. If you've added code that should be tested, add tests.
 4. If you've changed APIs, update the documentation, which is available [here](https://github.com/gluestack/ui-docs).
