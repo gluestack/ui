@@ -19,6 +19,7 @@ export type IPlacement =
   | 'bottom right'
   | 'right top'
   | 'right bottom'
+  | 'center'
   | 'left top'
   | 'left bottom';
 
@@ -47,5 +48,6 @@ export type IScrollContentProps = {
 export type PopperContext = IPopperProps & {
   triggerRef: any;
   onClose: any;
+  arrowProps?: any;
   setOverlayRef?: (overlayRef: any) => void;
 };

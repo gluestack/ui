@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, ViewStyle } from 'react-native';
+import { usePopperContext } from './PopperContext';
 import { getArrowStyles, popperDefaultData } from './utils';
 
 // This is an internal implementation of PopoverArrow
@@ -8,22 +9,15 @@ const PopperArrow = React.forwardRef(
     {
       height = popperDefaultData.defaultArrowHeight,
       width = popperDefaultData.defaultArrowWidth,
-
-      //@ts-ignore - Will be passed by React.cloneElement from PopperContent
-      arrowProps,
-      //@ts-ignore - Will be passed by React.cloneElement from PopperContent
-      actualPlacement,
       style,
-      borderColor = '#52525b',
-      backgroundColor = 'black',
       ...rest
     }: any,
-    //  IPopoverArrowProps & IBoxProps<IPopoverArrowProps>,
     ref: any
   ) => {
+    const { arrowProps, placement } = usePopperContext('Popper');
     const additionalStyles = React.useMemo(
-      () => getArrowStyles({ placement: actualPlacement, height, width }),
-      [actualPlacement, height, width]
+      () => getArrowStyles({ placement: placement, height, width }),
+      [placement, height, width]
     );
 
     const triangleStyle: ViewStyle = React.useMemo(
@@ -44,10 +38,10 @@ const PopperArrow = React.forwardRef(
       <View
         ref={ref}
         style={arrowStyles}
-        borderColor={borderColor}
-        backgroundColor={backgroundColor}
         zIndex={1}
+        {...arrowProps}
         {...rest}
+        actualPlacement={placement}
       />
     );
   }
