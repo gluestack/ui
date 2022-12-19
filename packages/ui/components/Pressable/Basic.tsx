@@ -5,7 +5,7 @@ export const Example = ({ ...props }) => {
   return (
     <Pressable
       onPress={() => console.log('Hello')}
-      sx={{ style: { bg: 'red.500', p: 12 } }}
+      sx={{ style: { bg: '$red500', p: 12 } }}
       {...props}
     >
       <Text>Hello</Text>

@@ -14,13 +14,13 @@ export default styled(
     variants: {
       outlined: {
         style: {
-          //   borderColor: "$red.500",
+          //   borderColor: "$red500",
           //   borderWidth: 2,
         },
       },
       ghost: {
         style: {
-          //   bg: "$red.500",
+          //   bg: "$red500",
         },
       },
     },

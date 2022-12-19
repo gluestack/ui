@@ -1,6 +1,6 @@
 // import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, Pressable } from 'react-native';
-
+import { StyleSheet, View } from 'react-native';
+import React from 'react';
 import { styled as xyz } from '@gluestack/ui-styled';
 
 const Box = xyz(
@@ -8,13 +8,13 @@ const Box = xyz(
   {
     baseStyle: {
       style: {
-        bg: '$primary.500',
+        bg: '$blue500',
         p: '$3',
       },
       state: {
         hover: {
           style: {
-            bg: '$red.300',
+            bg: '$red300',
           },
         },
       },
@@ -22,12 +22,12 @@ const Box = xyz(
     variants: {
       greenBox: {
         style: {
-          bg: '$red.500',
+          bg: '$red500',
         },
         state: {
           hover: {
             style: {
-              bg: '$red.100',
+              bg: '$red100',
             },
           },
         },
@@ -49,7 +49,7 @@ export default function App() {
       //   state: {
       //     hover: {
       //       style: {
-      //         bg: "$red.500",
+      //         bg: "$red500",
       //       },
       //     },
       //   },

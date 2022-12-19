@@ -1,6 +1,6 @@
 // import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View } from 'react-native';
-
+import React from 'react';
 import { styled } from '@gluestack/ui-styled';
 
 const Box = styled(
@@ -50,7 +50,7 @@ export default function App() {
         //   state: {
         //     hover: {
         //       style: {
-        //         bg: "$red.500",
+        //         bg: "$red500",
         //       },
         //     },
         //   },
