@@ -9,7 +9,6 @@ export default styled(
         px: 12,
         py: 8,
         color: '$text500',
-        fontSize: '$sm',
         bg: '$gray100',
       },
     },

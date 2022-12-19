@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal, Text, Button } from '@gluestack/ui';
+import { Modal, Box, Button, Text } from '@gluestack/ui';
 import Wrapper from '../Wrapper';
 // interface ModalProps {
 //   onPress: () => void;
@@ -23,8 +23,9 @@ export const ModalComponent = () => {
           setShowModal(false);
         }}
       >
-        <Modal.Backdrop /> {/* done */}
-        <Modal.Content maxH="212">
+        <Modal.Backdrop />
+
+        <Modal.Content>
           <Modal.CloseButton>
             <Text>X</Text>
           </Modal.CloseButton>
