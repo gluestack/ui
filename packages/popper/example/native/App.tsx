@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import { Pressable, Text, View } from 'react-native';
 import { Popper } from '@gluestack/popper';
 import React, { useRef } from 'react';
@@ -29,7 +30,7 @@ export default function App() {
         <Popper
           triggerRef={targetRef}
           onClose={() => setIsOpen(false)}
-          placement={'right'}
+          placement={'bottom right'}
           offset={3}
         >
           <Popper.Content

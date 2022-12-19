@@ -1,9 +1,9 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { OverlayContainer } from '@react-native-aria/overlays';
 import React from 'react';
 import type { ViewStyle } from 'react-native';
 import { Modal, Platform } from 'react-native';
 import { useKeyboardDismissable } from '../ReactNativeAria/useKeyboardDismisssable';
+
 export const ExitAnimationContext = React.createContext({
   exited: true,
   setExited: (_exited: boolean) => {},
