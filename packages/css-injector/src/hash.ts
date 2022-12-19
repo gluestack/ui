@@ -3,10 +3,11 @@
 // a simple djb2 hash based on hash-string:
 // https://github.com/MatthewBarker/hash-string/blob/master/source/hash-string.js
 // returns a hex-encoded hash
-export default function hash(text) {
+export default function hash(text: string) {
   if (!text) {
     return '';
   }
+  //
 
   let hashValue = 5381;
   let index = text.length - 1;

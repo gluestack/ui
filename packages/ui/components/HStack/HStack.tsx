@@ -5,7 +5,7 @@ export const HStackExample = () => {
   return (
     <>
       <Heading>HStack</Heading>
-      <HStack sx={{ style: { gap: 20 } }}>
+      <HStack space="sm">
         <Box sx={{ style: { w: 100, h: 100, bg: '$blue300' } }} />
         <Box sx={{ style: { w: 100, h: 100, bg: '$blue400' } }} />
         <Box sx={{ style: { w: 100, h: 100, bg: '$blue500' } }} />
