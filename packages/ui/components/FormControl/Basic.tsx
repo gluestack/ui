@@ -24,7 +24,7 @@ export const Example = () => {
       {/* Error Message */}
       {/* <FormControl.Error>
           <FormControl.Error.Icon>
-            <WarningIcon sx={{ style: { color: '$red.500' } }} />
+            <WarningIcon sx={{ style: { color: '$red500' } }} />
           </FormControl.Error.Icon>
           <FormControl.Error.Text>Password Invalid</FormControl.Error.Text>
         </FormControl.Error>

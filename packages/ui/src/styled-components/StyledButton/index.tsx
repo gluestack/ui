@@ -83,7 +83,7 @@ export default styled(
           //@ts-ignore
           bg: 'transparent',
           borderWidth: 1,
-          borderColor: '$trueGray.300',
+          borderColor: '$trueGray300',
         },
         descendants: {
           _text: {

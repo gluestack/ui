@@ -32,7 +32,7 @@ export default styled(
           descendants: {
             _icon: {
               style: {
-                color: '$gray.50',
+                color: '$gray50',
               },
             },
           },
