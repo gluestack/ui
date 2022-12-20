@@ -1,13 +1,14 @@
 import React from 'react';
-import Wrapper from '../Wrapper';
-import { Text } from '@gluestack/ui';
+import { Text, VStack } from '@gluestack/ui';
 
 export const Example = ({ sizes, ...props }: any) => {
   return (
-    <Wrapper>
+    <VStack>
       {sizes.map((size: any) => (
-        <Text sx={{ style: { fontSize: `$${size}` } }}>{size}</Text>
+        <Text sx={{ style: { fontSize: size, fontWeight: props.fontWeight } }}>
+          {size}
+        </Text>
       ))}
-    </Wrapper>
+    </VStack>
   );
 };

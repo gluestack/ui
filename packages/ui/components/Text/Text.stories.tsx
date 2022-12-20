@@ -6,9 +6,46 @@ import { Example as SizeExample } from './Sizes';
 const MyTextMeta: ComponentMeta<typeof BasicExample> = {
   title: 'Text',
   component: BasicExample,
-  argTypes: {},
+  argTypes: {
+    fontSize: {
+      control: {
+        type: 'select',
+        options: [
+          '$xs',
+          '$sm',
+          '$md',
+          '$lg',
+          '$xl',
+          '$2xl',
+          '$3xl',
+          '$4xl',
+          '$5xl',
+          '$6xl',
+        ],
+      },
+    },
+    fontWeight: {
+      control: {
+        type: 'select',
+        options: [
+          '$hairline',
+          '$thin',
+          '$light',
+          '$normal',
+          '$medium',
+          '$semibold',
+          '$bold',
+          '$extrabold',
+          '$black',
+          '$extraBlack',
+        ],
+      },
+    },
+  },
   args: {
     text: 'Hello world',
+    fontSize: '$md',
+    fontWeight: '$medium',
     sizes: ['xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl', '5xl', '6xl'],
   },
 };

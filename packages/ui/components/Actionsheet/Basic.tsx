@@ -5,10 +5,19 @@ import Wrapper from './../Wrapper';
 export const BasicExample = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
-  console.log('hello here');
+  console.log('hello here', isOpen);
   return (
     <>
-      <Button onPress={() => setIsOpen(true)}>Open</Button>
+      <Button
+        onPress={() => setIsOpen(true)}
+        sx={{
+          style: {
+            bg: '$green500',
+          },
+        }}
+      >
+        Open
+      </Button>
       <Actionsheet isOpen={isOpen} onClose={() => setIsOpen(false)}>
         <Actionsheet.Content>
           <Actionsheet.DragIndicator />
