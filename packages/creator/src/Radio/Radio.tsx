@@ -8,7 +8,7 @@ import { Platform } from 'react-native';
 import { useRadioGroup } from './RadioGroupContext';
 
 const Radio = (StyledRadio: any) =>
-  forwardRef(({ children, ...props }: any) => {
+  forwardRef(({ children, isInvalid, ...props }: any) => {
     const radioGroupContext = useRadioGroup('RadioGroupContext');
 
     if (!radioGroupContext)
@@ -27,6 +27,7 @@ const Radio = (StyledRadio: any) =>
       //@ts-ignore
       _ref
     );
+
     const {
       inputProps: { checked: isChecked, disabled: isDisabled },
     } = inputProps;
@@ -34,31 +35,46 @@ const Radio = (StyledRadio: any) =>
     if (Platform.OS === 'web') {
       return (
         <StyledRadio {...props} accessibilityRole="label" ref={_ref}>
-          <VisuallyHidden>
-            {/* <input {...props.inputProps} {...props.focusProps} ref={props.mergedRef} /> */}
-            <input {...inputProps.inputProps} {...focusProps} ref={_ref} />
-          </VisuallyHidden>
-          <RadioProvider
-            isChecked={isChecked}
-            isDisabled={isDisabled}
-            isFocusVisible={isFocusVisible}
-            isHovered={isHovered}
-          >
-            {children}
-          </RadioProvider>
+          {({ resolveContextChildrenStyle }: any) => {
+            return (
+              <RadioProvider
+                isChecked={isChecked}
+                isDisabled={isDisabled}
+                isFocusVisible={isFocusVisible}
+                isHovered={isHovered}
+                isInvalid={isInvalid}
+                resolveContextChildrenStyle={resolveContextChildrenStyle}
+              >
+                <VisuallyHidden>
+                  <input
+                    {...inputProps.inputProps}
+                    {...focusProps}
+                    ref={_ref}
+                  />
+                </VisuallyHidden>
+                {children}
+              </RadioProvider>
+            );
+          }}
         </StyledRadio>
       );
     } else {
       return (
-        <StyledRadio {...inputProps.inputProps} {...focusProps}>
-          <RadioProvider
-            isChecked={isChecked}
-            isDisabled={isDisabled}
-            isFocusVisible={isFocusVisible}
-            isHovered={isHovered}
-          >
-            {children}
-          </RadioProvider>
+        <StyledRadio {...props} ref={_ref}>
+          {({ resolveContextChildrenStyle }: any) => {
+            return (
+              <RadioProvider
+                isChecked={isChecked}
+                isDisabled={isDisabled}
+                isFocusVisible={isFocusVisible}
+                isHovered={isHovered}
+                isInvalid={isInvalid}
+                resolveContextChildrenStyle={resolveContextChildrenStyle}
+              >
+                {children}
+              </RadioProvider>
+            );
+          }}
         </StyledRadio>
       );
     }

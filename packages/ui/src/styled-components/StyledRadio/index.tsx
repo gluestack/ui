@@ -6,11 +6,10 @@ export default styled(
   {
     baseStyle: {
       style: {
-        p: 8,
+        p: '$2',
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        // @ts-ignore
       },
     },
   },
