@@ -1,6 +1,5 @@
 import React from 'react';
 import PresenceTransition from './PresenceTransition';
-// import type { IFadeProps } from './types';
 
 const Fade = ({ children, ...props }: any, ref?: any) => {
   const {
