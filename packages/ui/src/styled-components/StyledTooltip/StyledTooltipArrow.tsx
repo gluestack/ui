@@ -1,20 +1,21 @@
 import { styled } from '@gluestack/ui-styled';
-import { Popper } from '@gluestack/popper';
-// import { View } from 'react-native';
+
+import { View } from 'react-native';
 
 export default styled(
-  Popper.Arrow,
+  View,
   {
     baseStyle: {
       style: {
         // @ts-ignore
         fontSize: 'sm',
-        color: `text50`,
-        borderColor: 'blue',
+        color: `$text50`,
+        borderColor: '$blue500',
+        bg: '$amber500',
+        w: 100,
+        h: 100,
       },
     },
   },
-  {
-    // ancestorStyle: ['_text']
-  }
+  {}
 );

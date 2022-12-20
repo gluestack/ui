@@ -1,29 +1,31 @@
 import React from 'react';
-import { Tooltip, Text, Box, Button } from '@gluestack/ui';
+import { Tooltip, Text, Box, Button, Center } from '@gluestack/ui';
 import Wrapper from '../Wrapper';
 
-export const Example = ({ ...props }) => {
-  const targetRef = React.useRef(null);
-  const [isOpen, setIsOpen] = React.useState(false);
+export const Example = ({ placement, text, ...props }) => {
   return (
     <Wrapper>
-      <Button
-        ref={targetRef}
-        onHoverIn={() => {
-          setIsOpen(true);
+      <Tooltip
+        placement={placement}
+        trigger={(triggerProps: any) => {
+          return (
+            <Center>
+              <Button {...triggerProps}>
+                <Button.Text>More</Button.Text>
+              </Button>
+            </Center>
+          );
         }}
-        onHoverOut={() => {
-          setIsOpen(false);
-        }}
-        sx={{ style: { bg: '$red500' } }}
       >
-        <Text sx={{ style: { bg: '$red500' } }}>hello</Text>
-      </Button>
-      <Tooltip isOpen={isOpen} triggerRef={targetRef}>
-        <Tooltip.Arrow />
-        <Tooltip.Content sx={{ style: { bg: '$red500' } }}>
-          <Box>
-            <Text>dhhd</Text>
+        <Tooltip.Content>
+          <Box sx={{ style: { bg: '$black', rounded: '$sm' } }}>
+            <Text
+              sx={{
+                style: { color: '$white', px: '$2', py: '$1', fontSize: 12 },
+              }}
+            >
+              {text}
+            </Text>
           </Box>
         </Tooltip.Content>
       </Tooltip>
