@@ -1,11 +1,6 @@
 import React from 'react';
 import { Modal, Box, Button, Text } from '@gluestack/ui';
 import Wrapper from '../Wrapper';
-// interface ModalProps {
-//   onPress: () => void;
-//   text: string;
-// }
-/* eslint-disable no-console */
 
 export const ModalComponent = () => {
   const [showModal, setShowModal] = React.useState(false);
@@ -19,7 +14,6 @@ export const ModalComponent = () => {
       <Modal
         isOpen={showModal}
         onClose={() => {
-          console.log('hello here 1111');
           setShowModal(false);
         }}
       >
@@ -43,7 +37,7 @@ export const ModalComponent = () => {
           </Modal.Body>
           <Modal.Footer>
             <Button
-              variant="outline"
+              variant="solid"
               onPress={() => {
                 setShowModal(false);
               }}
