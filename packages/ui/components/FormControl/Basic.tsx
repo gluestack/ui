@@ -3,15 +3,15 @@ import React from 'react';
 
 export const Example = () => {
   return (
-    <Center>
-      <FormControl isInvalid>
+    <>
+      <FormControl isInvalid={true} isRequired={true}>
         {/* Label Message */}
         <FormControl.Label>
-          <FormControl.Label.Text>Password</FormControl.Label.Text>
+          <FormControl.Label.Text>Enter Your name</FormControl.Label.Text>
         </FormControl.Label>
 
         <Input.Root>
-          <Input type="password" defaultValue="12345" placeholder="password" />
+          <Input />
         </Input.Root>
 
         {/* Helper Text */}
@@ -33,7 +33,7 @@ export const Example = () => {
           </FormControl.Error.Text>
         </FormControl.Error>
       </FormControl>
-    </Center>
+    </>
   );
 };
 

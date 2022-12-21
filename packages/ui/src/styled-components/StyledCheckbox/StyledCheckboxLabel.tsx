@@ -18,6 +18,7 @@ export default styled(
             MozUserSelect: 'none',
             WebkitUserSelect: 'none',
             msUserSelect: 'none',
+            ml: '$2',
           },
         },
       },
