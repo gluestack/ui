@@ -5,7 +5,6 @@ import type { ConfigType, ThemeType } from './types';
 import { Cssify } from '@gluestack/cssify';
 import { pseudoResolveSx } from './pseudoResolver';
 
-import { StyledButton } from '../example/native/StyledButton';
 // import { nbConfig } from './../../';
 
 // setTimeout(() => {

@@ -28,6 +28,6 @@
     "strict": true,
     "target": "esnext"
   },
-  "include": ["src"],
+  "include": ["src", "StyledButton"],
   "exclude": ["lib", "node_modules"]
 }
