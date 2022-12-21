@@ -14,6 +14,20 @@ export default styled(
         borderWidth: 2,
         borderRadius: 999,
       },
+      platform: {
+        web: {
+          state: {
+            focusVisible: {
+              style: {
+                //@ts-ignore
+                outlineWidth: '2px',
+                outlineColor: '$primary400',
+                outlineStyle: 'solid',
+              },
+            },
+          },
+        },
+      },
       state: {
         hover: {
           style: {

@@ -9,6 +9,8 @@ export const RadioIndicator = (StyledRadioIndicator: any) =>
       isFocusVisible,
       isInvalid,
       isHovered,
+      isReadOnly,
+      isIndeterminate,
       resolveContextChildrenStyle,
     } = useRadio('RadioContext');
 
@@ -24,6 +26,8 @@ export const RadioIndicator = (StyledRadioIndicator: any) =>
     return (
       <StyledRadioIndicator
         states={{
+          readonly: isReadOnly,
+          intermediate: isIndeterminate,
           checked: isChecked,
           focusVisible: isFocusVisible,
           disabled: isDisabled,

@@ -9,20 +9,20 @@ export default styled(
         alignItems: 'center',
         color: '$primary600',
       },
-      platform: {
-        web: {
-          state: {
-            focusVisible: {
-              style: {
-                //@ts-ignore
-                outlineWidth: '2px',
-                outlineColor: '$primary700',
-                outlineStyle: 'solid',
-              },
-            },
-          },
-        },
-      },
+      // platform: {
+      //   web: {
+      //     state: {
+      //       focusVisible: {
+      //         style: {
+      //           //@ts-ignore
+      //           outlineWidth: '2px',
+      //           outlineColor: '$primary700',
+      //           outlineStyle: 'solid',
+      //         },
+      //       },
+      //     },
+      //   },
+      // },
       state: {
         disabled: {
           style: {
