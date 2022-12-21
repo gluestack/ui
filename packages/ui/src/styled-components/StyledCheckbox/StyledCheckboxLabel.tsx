@@ -5,7 +5,7 @@ export default styled(
   Text,
   {
     baseStyle: {
-      style: { color: '$blue900', p: 2 },
+      style: { color: '$black', ml: '$2' },
       platform: {
         web: {
           style: {
@@ -18,5 +18,7 @@ export default styled(
       },
     },
   },
-  {}
+  {
+    ancestorStyle: ['_text'],
+  }
 );

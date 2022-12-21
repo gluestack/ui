@@ -6,10 +6,15 @@ const MyCheckboxMeta: ComponentMeta<typeof CheckboxGroup> = {
   title: 'Checkbox',
   component: CheckboxGroup,
   argTypes: {
-    onPress: { action: 'pressed the button' },
+    size: {
+      control: {
+        type: 'select',
+        options: ['sm', 'md', 'lg'],
+      },
+    },
   },
   args: {
-    text: 'Hello world',
+    size: 'md',
   },
 };
 

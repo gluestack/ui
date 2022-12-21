@@ -22,5 +22,7 @@ export default styled(
       },
     },
   },
-  {}
+  {
+    ancestorStyle: ['_icon'],
+  }
 );

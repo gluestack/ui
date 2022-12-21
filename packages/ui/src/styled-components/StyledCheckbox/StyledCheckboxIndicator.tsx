@@ -8,8 +8,6 @@ export default styled(
       style: {
         justifyContent: 'center',
         alignItems: 'center',
-        h: 20,
-        w: 20,
         borderColor: '$muted400',
         bg: '$muted50',
         borderWidth: 2,
@@ -50,5 +48,7 @@ export default styled(
       },
     },
   },
-  {}
+  {
+    ancestorStyle: ['_indicator'],
+  }
 );
