@@ -7,6 +7,7 @@ export { Provider } from './ui-components/Provider';
 export { Button } from './ui-components/Button';
 
 export { Alert } from './ui-components/Alert';
+export { AlertDialog } from './ui-components/AlertDialog';
 export { Avatar } from './ui-components/Avatar';
 export { Badge } from './ui-components/Badge';
 export { Box } from './ui-components/Box';
@@ -30,7 +31,7 @@ export { Image } from './ui-components/Image';
 export { Input } from './ui-components/Input';
 export { Link } from './ui-components/Link';
 export { Menu } from './ui-components/Menu';
-export { Actionsheet } from './ui-components/ActionSheet';
+export { Actionsheet } from './ui-components/Actionsheet';
 export { Tooltip } from './ui-components/Tooltip';
 export * from './ui-components/Icon/Icons';
 export { Fab } from './ui-components/Fab';
@@ -43,6 +44,7 @@ declare module '@gluestack/config' {
   interface GlobalCustomConfig extends Conf {}
 }
 // export { TextArea } from './ui-components/TextArea';
+export { Popover } from './ui-components/Popover';
 export {
   Slide,
   PresenceTransition,
