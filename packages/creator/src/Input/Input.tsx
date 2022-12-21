@@ -22,6 +22,7 @@ export const Input = (StyledInput: any) =>
         isDisabled,
         isReadOnly,
         handleFocus,
+        //@ts-ignore
         isFocused,
         resolveContextChildrenStyle,
       } = useInput('InputContext');

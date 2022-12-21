@@ -1,8 +1,9 @@
+// @ts-nocheck
 import React from 'react';
-console.log('file loaded example styled');
 
-// import { config as uiConfig } from './nativebase.config';
 import { Platform, StyleSheet } from 'react-native';
+import { getConfig } from './config';
+
 // import type {
 //   ConfigType,
 //   IStates,
@@ -237,6 +238,7 @@ function resolveSx(
   const resolvedDecendantStyles = {} as any;
   const resolvedCompThemeStyle = [] as any;
 
+  const uiConfig = getConfig();
   resolveSxRecursive(
     compTheme.baseStyle,
     uiConfig,
@@ -346,6 +348,7 @@ export function styled<P>(
       ...props
     } = mergedProps;
 
+    const uiConfig = getConfig();
     const { sxProps, ignoredProps } = convertUtilityPropsToSX(
       uiConfig?.aliases,
       sx?.descendants,

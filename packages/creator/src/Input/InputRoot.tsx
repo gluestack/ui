@@ -49,6 +49,7 @@ export const InputRoot = (StyledInputRoot: any) =>
               <InputProvider
                 isDisabled={isDisabled || inputProps.disabled}
                 isInvalid={isInvalid || inputProps.accessibilityInvalid}
+                //@ts-ignore
                 isFocused={isFocused}
                 isReadOnly={isReadOnly || inputProps.readOnly}
                 isRequired={isRequired || inputProps.required}
