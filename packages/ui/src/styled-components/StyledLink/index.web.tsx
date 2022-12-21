@@ -6,7 +6,8 @@ export default styled(
   {
     baseStyle: {
       style: {
-        backgroundColor: '$secondary500',
+        width: 'auto',
+        height: 'auto',
       },
     },
   },

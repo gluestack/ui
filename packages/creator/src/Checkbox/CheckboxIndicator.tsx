@@ -3,8 +3,24 @@ import { useCheckbox } from './CheckboxProvider';
 
 const CheckboxIndicator = (StyledCheckboxIndicator: any) =>
   forwardRef(({ children, ...props }: any) => {
-    const { isChecked, isDisabled, isFocusVisible, isHovered } =
-      useCheckbox('CheckboxContext');
+    const {
+      isChecked,
+      isDisabled,
+      isFocusVisible,
+      isHovered,
+      isInvalid,
+      resolveContextChildrenStyle,
+    } = useCheckbox('CheckboxContext');
+
+    const { ancestorStyle } = StyledCheckboxIndicator.config;
+    let styledObject = {};
+
+    ancestorStyle?.forEach((consumer: any) => {
+      if (resolveContextChildrenStyle[consumer]) {
+        styledObject = [styledObject, resolveContextChildrenStyle[consumer]];
+      }
+    });
+
     return (
       <StyledCheckboxIndicator
         states={{
@@ -12,7 +28,9 @@ const CheckboxIndicator = (StyledCheckboxIndicator: any) =>
           focusVisible: isFocusVisible,
           disabled: isDisabled,
           hover: isHovered,
+          invalid: isInvalid,
         }}
+        ancestorStyle={styledObject}
         {...props}
       >
         {children}

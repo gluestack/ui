@@ -9,18 +9,23 @@ export default styled(
         h: '100%',
         justifyContent: 'center',
         alignItems: 'center',
-        bg: '$blue500',
+        color: '$white',
       },
       state: {
         checked: {
           state: {
             hover: {
-              style: { bg: '$blue600' },
+              style: { color: '$white' },
             },
           },
+        },
+        disabled: {
+          style: { opacity: 0.6 },
         },
       },
     },
   },
-  {}
+  {
+    ancestorStyle: ['_icon'],
+  }
 );

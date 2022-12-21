@@ -42,3 +42,10 @@ type Conf = typeof configuration;
 declare module '@gluestack/config' {
   interface GlobalCustomConfig extends Conf {}
 }
+// export { TextArea } from './ui-components/TextArea';
+export {
+  Slide,
+  PresenceTransition,
+  Fade,
+  Stagger,
+} from './ui-components/Transitions';

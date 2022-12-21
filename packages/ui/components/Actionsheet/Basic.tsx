@@ -5,7 +5,6 @@ import Wrapper from './../Wrapper';
 export const BasicExample = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
-  console.log('hello here');
   return (
     <>
       <Button onPress={() => setIsOpen(true)}>Open</Button>

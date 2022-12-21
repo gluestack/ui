@@ -21,6 +21,10 @@ export const config = {
       property: 'borderColor',
       scale: 'colors',
     },
+    outlineColor: {
+      property: 'outlineColor',
+      scale: 'colors',
+    },
 
     // dimension
     h: {
