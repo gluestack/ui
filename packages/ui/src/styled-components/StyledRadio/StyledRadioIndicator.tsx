@@ -34,14 +34,14 @@ export default styled(
             borderColor: '$primary700',
           },
         },
-        invalid: {
-          style: {
-            borderColor: '$error600',
-          },
-        },
         disabled: {
           style: {
             opacity: 0.6,
+          },
+        },
+        invalid: {
+          style: {
+            borderColor: '$error600',
           },
         },
         checked: {

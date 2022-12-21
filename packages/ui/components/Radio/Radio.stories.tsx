@@ -12,9 +12,21 @@ const MyRadioMeta: ComponentMeta<typeof RadioGroup> = {
         options: ['sm', 'md', 'lg'],
       },
     },
+    isInvalid: {
+      type: 'boolean',
+    },
+    isDisabled: {
+      type: 'boolean',
+    },
+    isReadOnly: {
+      type: 'boolean',
+    },
   },
   args: {
     size: 'md',
+    isInvalid: false,
+    isDisabled: false,
+    isReadOnly: false,
   },
 };
 

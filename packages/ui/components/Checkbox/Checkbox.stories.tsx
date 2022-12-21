@@ -12,9 +12,28 @@ const MyCheckboxMeta: ComponentMeta<typeof CheckboxGroup> = {
         options: ['sm', 'md', 'lg'],
       },
     },
+    // value: {
+    //   control: {
+    //     type: 'check',
+    //     options: ['Label 1', 'Label 2'],
+    //   },
+    // },
+    isInvalid: {
+      type: 'boolean',
+    },
+    isDisabled: {
+      type: 'boolean',
+    },
+    isReadOnly: {
+      type: 'boolean',
+    },
   },
   args: {
     size: 'md',
+    // value: ['Label 1'],
+    isInvalid: false,
+    isDisabled: false,
+    isReadOnly: false,
   },
 };
 

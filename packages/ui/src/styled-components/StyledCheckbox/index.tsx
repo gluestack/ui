@@ -13,6 +13,11 @@ export default styled(
         alignItems: 'center',
         // @ts-ignore
       },
+      state: {
+        disabled: {
+          style: { opacity: 0.6 },
+        },
+      },
     },
     sizes: {
       lg: {

@@ -6,6 +6,11 @@ export default styled(
   {
     baseStyle: {
       style: { color: '$black', ml: '$2' },
+      state: {
+        disabled: {
+          style: { opacity: 0.6 },
+        },
+      },
       platform: {
         web: {
           style: {

@@ -19,6 +19,9 @@ export default styled(
             },
           },
         },
+        disabled: {
+          style: { opacity: 0.6 },
+        },
       },
     },
   },
