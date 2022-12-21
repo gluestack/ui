@@ -16,7 +16,6 @@ import Wrapper from './../Wrapper';
 
 export const BasicExample = () => {
   const [isOpen, setIsOpen] = React.useState(false);
-
   return (
     <Wrapper>
       <Center>
