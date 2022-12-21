@@ -31,3 +31,9 @@ export { Fab } from './ui-components/Fab';
 export { Select } from './ui-components/Select';
 export { useToast, ToastComponent } from './ui-components/Toast';
 // export { TextArea } from './ui-components/TextArea';
+export {
+  Slide,
+  PresenceTransition,
+  Fade,
+  Stagger,
+} from './ui-components/Transitions';
