@@ -12,6 +12,11 @@ export default styled(
         justifyContent: 'center',
         alignItems: 'center',
       },
+      state: {
+        disabled: {
+          style: { opacity: 0.6 },
+        },
+      },
       platform: {
         web: {
           style: {
