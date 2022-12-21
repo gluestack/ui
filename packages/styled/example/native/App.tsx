@@ -310,7 +310,7 @@ function Button() {
   console.log('******', MyButton);
   return (
     <MyButton
-      variant="solid"
+      variant="link"
       size="md"
       // colorMode="dark"
       states={{

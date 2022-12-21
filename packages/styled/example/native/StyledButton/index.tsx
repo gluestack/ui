@@ -36,60 +36,185 @@ export default styled(
     },
 
     variants: {
-      solid: {
-        style: {
-          bg: '$primary600',
-        },
+      // solid: {
+      //   style: {
+      //     bg: '$primary600',
+      //   },
+      //   descendants: {
+      //     _text: {
+      //       style: {
+      //         color: '$text50',
+      //       },
+      //     },
+      //     _spinner: {
+      //       style: {
+      //         color: '$text50',
+      //       },
+      //     },
+      //   },
+      //   state: {
+      //     hover: {
+      //       style: {
+      //         bg: '$primary700',
+      //       },
+      //     },
+      //     active: {
+      //       style: {
+      //         bg: '$primary800',
+      //       },
+      //     },
+      //   },
+      // },
+      // subtle: {
+      //   style: {
+      //     bg: '$primary100',
+      //   },
+      //   descendants: {
+      //     _text: {
+      //       style: {
+      //         color: '$primary900',
+      //       },
+      //     },
+      //     _spinner: {
+      //       style: {
+      //         color: '$primary900',
+      //       },
+      //     },
+      //   },
+      //   state: {
+      //     hover: {
+      //       style: {
+      //         bg: '$primary200',
+      //       },
+      //     },
+      //     active: {
+      //       style: {
+      //         bg: '$primary300',
+      //       },
+      //     },
+      //   },
+      // },
+      // outline: {
+      //   style: {
+      //     //@ts-ignore
+      //     bg: 'transparent',
+      //     borderWidth: 1,
+      //     borderColor: '$trueGray.300',
+      //   },
+      //   descendants: {
+      //     _text: {
+      //       style: {
+      //         color: '$primary600',
+      //       },
+      //     },
+      //     _spinner: {
+      //       style: {
+      //         color: '$primary600',
+      //       },
+      //     },
+      //   },
+      //   state: {
+      //     hover: {
+      //       style: {
+      //         bg: '$primary400', //replace it with alpha token "$primary600:alpha10 when supported"
+      //         // backgroundOpacity: '0.1',
+      //       },
+      //       descendants: {
+      //         _text: {
+      //           style: {
+      //             color: '$muted100',
+      //           },
+      //         },
+      //       },
+      //     },
+      //     active: {
+      //       style: {
+      //         bg: '$primary500', //replace it with alpha token "$primary600:alpha20 when supported"
+      //       },
+      //       descendants: {
+      //         _text: {
+      //           style: {
+      //             color: '$muted100',
+      //           },
+      //         },
+      //       },
+      //     },
+      //   },
+      // },
+      // ghost: {
+      //   descendants: {
+      //     _text: {
+      //       style: {
+      //         color: '$primary600',
+      //       },
+      //     },
+      //     _spinner: {
+      //       style: {
+      //         color: '$primary600',
+      //       },
+      //     },
+      //   },
+      //   state: {
+      //     hover: {
+      //       style: {
+      //         bg: '$primary400', //replace it with alpha token "$primary600:alpha10 when supported"
+      //       },
+      //       descendants: {
+      //         _text: {
+      //           style: {
+      //             color: '$text100',
+      //           },
+      //         },
+      //       },
+      //     },
+      //     active: {
+      //       style: {
+      //         bg: '$primary500', //replace it with alpha token "$primary600:alpha20 when supported"
+      //       },
+      //       descendants: {
+      //         _text: {
+      //           style: {
+      //             color: '$text50',
+      //           },
+      //         },
+      //       },
+      //     },
+      //   },
+      // },
+      link: {
         descendants: {
           _text: {
             style: {
-              color: '$text50',
+              color: '$primary600',
             },
           },
           _spinner: {
             style: {
-              color: '$text50',
+              color: '$primary600',
             },
           },
         },
         state: {
           hover: {
             style: {
-              bg: '$primary700',
+              bg: 'transparent',
+            },
+            descendants: {
+              _text: {
+                style: {
+                  textDecorationLine: 'underline',
+                },
+              },
             },
           },
           active: {
-            style: {
-              bg: '$primary800',
-            },
-          },
-        },
-      },
-      subtle: {
-        style: {
-          bg: '$primary100',
-        },
-        descendants: {
-          _text: {
-            style: {
-              color: '$primary900',
-            },
-          },
-          _spinner: {
-            style: {
-              color: '$primary900',
-            },
-          },
-        },
-        state: {
-          hover: {
-            style: {
-              bg: '$primary200',
-            },
-          },
-          active: {
-            style: {
-              bg: '$primary300',
+            descendants: {
+              _text: {
+                style: {
+                  color: '$primary800',
+                  textDecorationLine: 'underline',
+                },
+              },
             },
           },
         },
