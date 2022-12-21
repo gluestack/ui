@@ -3,12 +3,15 @@
 import { StyleSheet, Text, View, Pressable } from 'react-native';
 import { useState } from 'react';
 import { styled } from '@gluestack/ui-styled';
-import { config } from './nb.config';
-import { createConfig } from '@gluestack/ui-styled';
-createConfig(config);
+// import { config } from './nb.config';
+// import { createConfig } from '@gluestack/ui-styled';
+// createConfig(config);
 // onReady((config) => {
 //   console.log(config);
 // });
+
+import MyButton from './StyledButton/index';
+import MyButtonText from './StyledButton/StyledButtonText';
 
 import {
   set as setColorMode,
@@ -76,253 +79,239 @@ function composeEventHandlers<E>(
   };
 }
 
-const MyText = styled(
-  Text,
-  {
-    baseStyle: {
-      style: {
-        color: 'red',
-      },
-    },
-    variants: {},
-    sizes: {},
-  },
-  {
-    ancestorStyle: ['_text'],
-  }
-);
-const Box = styled(
-  Pressable,
-  {
-    baseStyle: {
-      style: {
-        bg: 'red',
-        p: '$3',
-      },
+// const Box = styled(
+//   Pressable,
+//   {
+//     baseStyle: {
+//       style: {
+//         bg: 'red',
+//         p: '$3',
+//       },
 
-      colorMode: {
-        dark: {
-          style: {
-            bg: 'aqua',
-          },
-        },
-      },
-      // queries: [
-      //   {
-      //     condition: '$md',
-      //     value: {
-      //       style: {
-      //         bg: 'blue',
-      //       },
-      //       state: {
-      //         hover: {
-      //           style: {
-      //             bg: 'aqua',
-      //           },
-      //           // hover: {
-      //           //   style: {
-      //           //     bg: 'red',
-      //           //   },
-      //           // },
+//       colorMode: {
+//         dark: {
+//           style: {
+//             bg: 'aqua',
+//           },
+//         },
+//       },
+//       // queries: [
+//       //   {
+//       //     condition: '$md',
+//       //     value: {
+//       //       style: {
+//       //         bg: 'blue',
+//       //       },
+//       //       state: {
+//       //         hover: {
+//       //           style: {
+//       //             bg: 'aqua',
+//       //           },
+//       //           // hover: {
+//       //           //   style: {
+//       //           //     bg: 'red',
+//       //           //   },
+//       //           // },
 
-      //           // colorMode: {
-      //           //   dark: {
-      //           //     style: {
-      //           //       bg: 'purple',
-      //           //     },
-      //           //   },
-      //           //   light: {
-      //           //     style: {
-      //           //       bg: 'aqua',
-      //           //     },
-      //           //   },
-      //           // },
-      //           // state: {
-      //           //   hover: {
-      //           //     style: {
-      //           //       bg: '$yellow500',
-      //           //     },
-      //           //   },
-      //           // },
-      //         },
-      //       },
-      //     },
-      //   },
-      // ],
+//       //           // colorMode: {
+//       //           //   dark: {
+//       //           //     style: {
+//       //           //       bg: 'purple',
+//       //           //     },
+//       //           //   },
+//       //           //   light: {
+//       //           //     style: {
+//       //           //       bg: 'aqua',
+//       //           //     },
+//       //           //   },
+//       //           // },
+//       //           // state: {
+//       //           //   hover: {
+//       //           //     style: {
+//       //           //       bg: '$yellow500',
+//       //           //     },
+//       //           //   },
+//       //           // },
+//       //         },
+//       //       },
+//       //     },
+//       //   },
+//       // ],
 
-      state: {
-        hover: {
-          style: {
-            bg: '$green500',
-          },
-          state: {
-            focus: {
-              style: {
-                bg: 'purple',
-              },
-            },
-          },
-        },
-      },
+//       state: {
+//         hover: {
+//           style: {
+//             bg: '$green500',
+//           },
+//           state: {
+//             focus: {
+//               style: {
+//                 bg: 'purple',
+//               },
+//             },
+//           },
+//         },
+//       },
 
-      // state: {
-      //   hover: {
-      //     style: {
-      //       bg: 'yellow',
-      //     },
+//       // state: {
+//       //   hover: {
+//       //     style: {
+//       //       bg: 'yellow',
+//       //     },
 
-      //     // hover: {
-      //     //   style: {
-      //     //     bg: 'yellow',
-      //     //   },
-      //     //   hover: {
-      //     //     style: {
-      //     //       bg: 'yellow',
-      //     //     },
-      //     //     hover: {
-      //     //       style: {
-      //     //         bg: 'aqua',
-      //     //       },
-      //     //     },
-      //     //   },
-      //     // },
-      //     descendants: {
-      //       _text: {
-      //         style: {
-      //           color: 'purple',
-      //         },
-      //       },
-      //     },
-      //   },
+//       //     // hover: {
+//       //     //   style: {
+//       //     //     bg: 'yellow',
+//       //     //   },
+//       //     //   hover: {
+//       //     //     style: {
+//       //     //       bg: 'yellow',
+//       //     //     },
+//       //     //     hover: {
+//       //     //       style: {
+//       //     //         bg: 'aqua',
+//       //     //       },
+//       //     //     },
+//       //     //   },
+//       //     // },
+//       //     descendants: {
+//       //       _text: {
+//       //         style: {
+//       //           color: 'purple',
+//       //         },
+//       //       },
+//       //     },
+//       //   },
 
-      //   active: {
-      //     style: {
-      //       bg: '',
-      //     },
-      //   },
-      // },
-      descendants: {
-        _text: {
-          style: {
-            color: 'white',
-          },
-        },
-      },
-    },
-    variants: {
-      greenBox: {
-        style: {
-          bg: '$green500',
-        },
-        state: {
-          hover: {
-            style: {
-              bg: '$green600',
-            },
-          },
-          active: {
-            style: {
-              bg: '$green700',
-            },
-          },
-        },
-        queries: [
-          {
-            condition: '$md',
-            value: {
-              style: {
-                bg: '$blue500',
-              },
-              state: {
-                hover: {
-                  style: {
-                    bg: '$green500',
-                  },
-                  state: {
-                    focus: {
-                      style: {
-                        bg: 'purple',
-                      },
-                    },
-                  },
-                },
-              },
-              colorMode: {
-                dark: {
-                  style: {
-                    bg: '$red500',
-                  },
-                },
-                light: {
-                  style: {
-                    bg: '$blue500',
-                  },
-                },
-              },
-            },
-          },
-        ],
-      },
-      // blueBox: {
-      //   style: {
-      //     bg: '$yellow500',
-      //   },
-      //   // colorMode: {
-      //   //   dark: {
-      //   //     style: {
-      //   //       bg: '$yellow100',
-      //   //     },
-      //   //   },
-      //   // },
-      //   // state: {
-      //   //   hover: {
-      //   //     style: {
-      //   //       bg: '$yellow600',
-      //   //     },
-      //   //   },
-      //   //   active: {
-      //   //     style: {
-      //   //       bg: '$yellow700',
-      //   //     },
-      //   //   },
-      //   // },
-      // },
-    },
-    sizes: {
-      // small: {
-      //   style: {
-      //     p: '$10',
-      //   },
-      // },
-      large: {
-        style: {
-          px: '$20',
-          py: '$10',
-        },
-        state: {
-          hover: {
-            style: {
-              bg: 'pink',
-            },
-          },
-        },
-      },
-    },
-  },
-  {
-    descendentStyle: ['_text'],
-  }
-);
+//       //   active: {
+//       //     style: {
+//       //       bg: '',
+//       //     },
+//       //   },
+//       // },
+//       descendants: {
+//         _text: {
+//           style: {
+//             color: 'white',
+//           },
+//         },
+//       },
+//     },
+//     variants: {
+//       greenBox: {
+//         style: {
+//           bg: '$green500',
+//         },
+//         state: {
+//           hover: {
+//             style: {
+//               bg: '$green600',
+//             },
+//           },
+//           active: {
+//             style: {
+//               bg: '$green700',
+//             },
+//           },
+//         },
+//         queries: [
+//           {
+//             condition: '$md',
+//             value: {
+//               style: {
+//                 bg: '$blue500',
+//               },
+//               state: {
+//                 hover: {
+//                   style: {
+//                     bg: '$green500',
+//                   },
+//                   state: {
+//                     focus: {
+//                       style: {
+//                         bg: 'purple',
+//                       },
+//                     },
+//                   },
+//                 },
+//               },
+//               colorMode: {
+//                 dark: {
+//                   style: {
+//                     bg: '$red500',
+//                   },
+//                 },
+//                 light: {
+//                   style: {
+//                     bg: '$blue500',
+//                   },
+//                 },
+//               },
+//             },
+//           },
+//         ],
+//       },
+//       // blueBox: {
+//       //   style: {
+//       //     bg: '$yellow500',
+//       //   },
+//       //   // colorMode: {
+//       //   //   dark: {
+//       //   //     style: {
+//       //   //       bg: '$yellow100',
+//       //   //     },
+//       //   //   },
+//       //   // },
+//       //   // state: {
+//       //   //   hover: {
+//       //   //     style: {
+//       //   //       bg: '$yellow600',
+//       //   //     },
+//       //   //   },
+//       //   //   active: {
+//       //   //     style: {
+//       //   //       bg: '$yellow700',
+//       //   //     },
+//       //   //   },
+//       //   // },
+//       // },
+//     },
+//     sizes: {
+//       // small: {
+//       //   style: {
+//       //     p: '$10',
+//       //   },
+//       // },
+//       large: {
+//         style: {
+//           px: '$20',
+//           py: '$10',
+//         },
+//         state: {
+//           hover: {
+//             style: {
+//               bg: 'pink',
+//             },
+//           },
+//         },
+//       },
+//     },
+//   },
+//   {
+//     descendentStyle: ['_text'],
+//   }
+// );
 
 function Button() {
   const { pressableProps, isPressed } = useIsPressed();
   let { isFocused, focusProps } = useFocus();
   const { isHovered, hoverProps }: any = useHover();
 
+  console.log('******', MyButton);
   return (
-    <Box
-      // variant="greenBox"
-      size="large"
+    <MyButton
+      variant="solid"
+      size="md"
       // colorMode="dark"
       states={{
         hover: isHovered,
@@ -361,8 +350,8 @@ function Button() {
       //   },
       // }}
     >
-      <MyText>Hello</MyText>
-    </Box>
+      <MyButtonText>Hello World</MyButtonText>
+    </MyButton>
   );
 }
 

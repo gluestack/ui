@@ -1,8 +1,7 @@
 import { Text } from 'react-native';
 import { styled } from '@gluestack/ui-styled';
-import React from 'react';
 
-const Button = styled(
+export default styled(
   Text,
   {
     baseStyle: {
@@ -41,16 +40,6 @@ const Button = styled(
         },
       },
     },
-  } as const,
+  },
   { ancestorStyle: ['_text'] }
 );
-
-type myType = UtilityProp;
-
-<Button
-  sx={{
-    style: {
-      bg: '$red100',
-    },
-  }}
-/>;

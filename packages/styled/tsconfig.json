@@ -1,5 +1,5 @@
 {
-  "include": ["./src"],
+  "include": ["./src", "example/native/StyledButton"],
   "exclude": ["node_modules", "example"],
   "path": {
     "@gluestack/ui-styled": ["./src"],
