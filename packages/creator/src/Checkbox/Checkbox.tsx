@@ -97,6 +97,8 @@ export const Checkbox = (StyledCheckbox: any) =>
                 isFocusVisible={isFocusVisible}
                 isHovered={isHovered}
                 isInvalid={isInvalid}
+                isReadOnly={isReadOnly}
+                isIndeterminate={isIndeterminate}
                 resolveContextChildrenStyle={resolveContextChildrenStyle}
               >
                 {children}

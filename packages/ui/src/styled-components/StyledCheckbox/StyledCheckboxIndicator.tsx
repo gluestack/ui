@@ -13,6 +13,20 @@ export default styled(
         borderWidth: 2,
         borderRadius: 6,
       },
+      platform: {
+        web: {
+          state: {
+            focusVisible: {
+              style: {
+                //@ts-ignore
+                outlineWidth: '2px',
+                outlineColor: '$primary400',
+                outlineStyle: 'solid',
+              },
+            },
+          },
+        },
+      },
       state: {
         checked: {
           style: {
