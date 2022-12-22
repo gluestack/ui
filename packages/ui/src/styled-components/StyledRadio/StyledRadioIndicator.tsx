@@ -1,6 +1,6 @@
-import { config } from '../ui.config';
 import { View } from 'react-native';
 import { styled } from '@gluestack/ui-styled';
+import { config } from '../ui.config';
 
 export default styled(
   View,
