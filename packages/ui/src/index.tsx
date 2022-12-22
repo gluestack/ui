@@ -1,6 +1,7 @@
 export { Provider } from './ui-components/Provider';
 export { Button } from './ui-components/Button';
 export { Alert } from './ui-components/Alert';
+export { AlertDialog } from './ui-components/AlertDialog';
 export { Avatar } from './ui-components/Avatar';
 export { Badge } from './ui-components/Badge';
 export { Box } from './ui-components/Box';
@@ -31,6 +32,7 @@ export { Fab } from './ui-components/Fab';
 export { Select } from './ui-components/Select';
 export { useToast, ToastComponent } from './ui-components/Toast';
 // export { TextArea } from './ui-components/TextArea';
+export { Popover } from './ui-components/Popover';
 export {
   Slide,
   PresenceTransition,
