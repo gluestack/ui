@@ -26,6 +26,17 @@ export default styled(
             },
           },
         },
+        active: {
+          style: {
+            bg: '$primary800',
+            borderColor: '$primary800',
+          },
+        },
+        invalid: {
+          style: {
+            borderColor: '$error600',
+          },
+        },
       },
       state: {
         checked: {
