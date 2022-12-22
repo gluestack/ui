@@ -8,12 +8,35 @@ export default styled(
       style: {
         justifyContent: 'center',
         alignItems: 'center',
-        h: 20,
-        w: 20,
         borderColor: '$muted400',
         bg: '$muted50',
         borderWidth: 2,
         borderRadius: 6,
+      },
+      platform: {
+        web: {
+          state: {
+            focusVisible: {
+              style: {
+                //@ts-ignore
+                outlineWidth: '2px',
+                outlineColor: '$primary400',
+                outlineStyle: 'solid',
+              },
+            },
+          },
+        },
+        active: {
+          style: {
+            bg: '$primary800',
+            borderColor: '$primary800',
+          },
+        },
+        invalid: {
+          style: {
+            borderColor: '$error600',
+          },
+        },
       },
       state: {
         checked: {
@@ -50,5 +73,7 @@ export default styled(
       },
     },
   },
-  {}
+  {
+    ancestorStyle: ['_indicator'],
+  }
 );

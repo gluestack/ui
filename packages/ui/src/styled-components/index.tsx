@@ -1,3 +1,4 @@
+// export { default as StyledTextArea } from './StyledTextArea';
 export { default as StyledButton } from './StyledButton';
 export { default as StyledButtonText } from './StyledButton/StyledButtonText';
 export { default as StyledButtonGroup } from './StyledButton/StyledButtonGroup';

@@ -31,6 +31,7 @@ export * from './ui-components/Icon/Icons';
 export { Fab } from './ui-components/Fab';
 export { Select } from './ui-components/Select';
 export { useToast, ToastComponent } from './ui-components/Toast';
+// export { TextArea } from './ui-components/TextArea';
 export { Popover } from './ui-components/Popover';
 export {
   Slide,
