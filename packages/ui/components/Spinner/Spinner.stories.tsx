@@ -7,6 +7,14 @@ const SpinnerMeta: ComponentMeta<typeof Spinner> = {
   component: Spinner,
   argTypes: {},
   args: {},
+  parameters: {
+    docs: {
+      description: {
+        component:
+          '**Spinners** gives visual cues to actions that are processing or awaiting a course change or results.',
+      },
+    },
+  },
 };
 
 export default SpinnerMeta;

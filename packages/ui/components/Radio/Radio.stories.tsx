@@ -28,6 +28,14 @@ const MyRadioMeta: ComponentMeta<typeof RadioGroup> = {
     isDisabled: false,
     isReadOnly: false,
   },
+  parameters: {
+    docs: {
+      description: {
+        component:
+          '**Radio** limits the selection from a series of options to only one.',
+      },
+    },
+  },
 };
 
 export default MyRadioMeta;

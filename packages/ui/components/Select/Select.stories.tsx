@@ -25,6 +25,14 @@ const SelectMeta: ComponentMeta<typeof Select> = {
     isDisabled: false,
     isInvalid: false,
   },
+  parameters: {
+    docs: {
+      description: {
+        component:
+          '**Select** creates a dropdown list of items with the selected item in closed view.',
+      },
+    },
+  },
 };
 
 export default SelectMeta;
