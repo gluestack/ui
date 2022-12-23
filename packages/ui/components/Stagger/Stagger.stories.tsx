@@ -18,6 +18,14 @@ const StaggerMeta: ComponentMeta<typeof Stagger> = {
   args: {
     isOpen: false,
   },
+  parameters: {
+    docs: {
+      description: {
+        component:
+          '**Stagger** component provides a declarative API to add staggered transitions.',
+      },
+    },
+  },
 };
 
 export default StaggerMeta;

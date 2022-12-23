@@ -20,6 +20,14 @@ const SwitchMeta: ComponentMeta<typeof Switch> = {
     isDisabled: false,
     isEnabled: false,
   },
+  parameters: {
+    docs: {
+      description: {
+        component:
+          'The **Switch** provides an alternative to the Checkbox component. It also allows a user to switch between enabled or disabled states.',
+      },
+    },
+  },
 };
 
 export default SwitchMeta;

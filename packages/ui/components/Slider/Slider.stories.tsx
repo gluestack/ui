@@ -11,6 +11,14 @@ const SliderMeta: ComponentMeta<typeof Slider> = {
     },
   },
   args: { value: 30 },
+  parameters: {
+    docs: {
+      description: {
+        component:
+          'The **Slider** allows users to select options from a given range of values.',
+      },
+    },
+  },
 };
 
 export default SliderMeta;
