@@ -10,10 +10,12 @@ const workspaceRoot = findWorkspaceRoot(__dirname);
 
 const root = path.resolve(__dirname, '../creator');
 const node_modules = path.join(workspaceRoot, 'node_modules');
+const BundleAnalyzerPlugin =
+  require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = async function (env, argv) {
   const config = await createExpoWebpackConfigAsync(env, argv);
-
+  config.plugins.push(new BundleAnalyzerPlugin());
   config.module.rules.push({
     test: /\.(js|ts|tsx)$/,
     include: path.resolve(root, 'src'),

@@ -21,7 +21,7 @@ export const Basic: MyCustomLinearGradientStory = ({ ...props }) => {
   return (
     <LinearGradient
       {...props}
-      colors={['#4c669f', '#3b5998', '#192f6a']}
+      colors={['$red100', '$red200', '$red300']}
       start={{ x: 0, y: 0.5 }}
       sx={{
         style: {
