@@ -17404,6 +17404,11 @@ storybook-dark-mode@^2.0.4:
     global "^4.4.0"
     memoizerific "^1.11.3"
 
+storybook-multilevel-sort@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/storybook-multilevel-sort/-/storybook-multilevel-sort-1.2.0.tgz#86385f2017cc95ce2915ce58edcd136efb04a588"
+  integrity sha512-E8KNPB0Tk9kV6RTn9pW6d3mK8DUXHvDgkS5+L11FuQzIMPagsviqajGK4G6+ZDizzz6fAKlCvSygNPEFIKYkLQ==
+
 stream-browserify@^2.0.1:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/stream-browserify/-/stream-browserify-2.0.2.tgz#87521d38a44aa7ee91ce1cd2a47df0cb49dd660b"

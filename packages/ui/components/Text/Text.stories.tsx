@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react-native';
-import { Text } from '@gluestack/ui';
+import { Text, Center } from '@gluestack/ui';
 import Wrapper from '../Wrapper';
 
 const TextMeta: ComponentMeta<typeof Text> = {
@@ -21,11 +21,61 @@ const TextMeta: ComponentMeta<typeof Text> = {
         '5xl',
         '6xl',
       ],
+      description: 'The size of font',
+      defaultValue: 'md',
+    },
+    fontStyle: {
+      control: 'select',
+      options: ['normal', 'italic'],
+      description: 'Font Style',
+      defaultValue: 'normal',
+    },
+    fontWeight: {
+      control: 'select',
+      options: [
+        '100',
+        '200',
+        '300',
+        '400',
+        '500',
+        '600',
+        '700',
+        '800',
+        '900',
+        'normal',
+        'bold',
+      ],
+      description: 'Font weight',
+      defaultValue: 'normal',
+    },
+    textAlign: {
+      control: 'select',
+      options: ['auto', 'left', 'right', 'center', 'justify'],
+      description: 'Text align',
+      defaultValue: 'auto',
+    },
+    textDecorationLine: {
+      control: 'select',
+      options: ['none', 'underline', 'line-through', 'underline line-through'],
+    },
+    textTransform: {
+      control: 'select',
+      options: ['none', 'uppercase', 'lowercase', 'capitalize'],
     },
   },
   args: {
     text: 'Hello world',
     size: 'md',
+    fontStyle: 'normal',
+    fontWeight: 'normal',
+    letterSpacing: 0,
+    lineHeight: 0,
+    textAlign: 'auto',
+    textDecorationLine: 'none',
+    textTransform: 'none',
+    textShadowColor: '#000000',
+    textShadowOffset: { width: 0, height: 0 },
+    textShadowRadius: 0,
   },
   parameters: {
     docs: {
@@ -38,36 +88,8 @@ const TextMeta: ComponentMeta<typeof Text> = {
 };
 
 export default TextMeta;
+import { PlayGround } from './PlayGround';
+import { Sizes } from './Size';
+import { Overridden } from './Overridden';
 
-type TextStory = ComponentStory<typeof Text>;
-type SizeTextStory = ComponentStory<typeof Text>;
-
-export const Basic: TextStory = ({ size, text, ...props }) => {
-  return (
-    <Text sx={{ style: { fontSize: `$${size}` } }} {...props}>
-      {text}
-    </Text>
-  );
-};
-
-export const Sizes: SizeTextStory = ({ size, ...props }) => {
-  const sizes = [
-    'xs',
-    'sm',
-    'md',
-    'lg',
-    'xl',
-    '2xl',
-    '3xl',
-    '4xl',
-    '5xl',
-    '6xl',
-  ];
-  return (
-    <Wrapper>
-      {sizes.map((size: any) => (
-        <Text sx={{ style: { fontSize: `$${size}` } }}>{size}</Text>
-      ))}
-    </Wrapper>
-  );
-};
+export { PlayGround, Sizes, Overridden };
