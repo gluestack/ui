@@ -2,7 +2,12 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@gluestack/docs": ["../.."]
+      "@gluestack/test-performance": ["../.."],
+      "@gluestack/ui-creator": ["../../creator/src/index"],
+      "@gluestack/popper": ["../../popper/src/index"],
+      "@gluestack/ui": ["./../ui/src/index"],
+      "@gluestack/ui-styled": ["../../styled/src/index"],
+      "@gluestack/color-mode": ["../../color-mode/src/index"]
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],

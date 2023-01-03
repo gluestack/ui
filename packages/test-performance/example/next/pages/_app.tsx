@@ -1,8 +1,9 @@
-import { Provider } from '@gluestack/docs/provider';
 import Head from 'next/head';
 import React from 'react';
 import type { SolitoAppProps } from 'solito';
 import 'raf/polyfill';
+import { GluestackUIProvider } from '@gluestack/ui-creator';
+import { config } from '../ui.config';
 
 function MyApp({ Component, pageProps }: SolitoAppProps) {
   return (
@@ -15,9 +16,9 @@ function MyApp({ Component, pageProps }: SolitoAppProps) {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Provider>
+      <GluestackUIProvider config={config}>
         <Component {...pageProps} />
-      </Provider>
+      </GluestackUIProvider>
     </>
   );
 }

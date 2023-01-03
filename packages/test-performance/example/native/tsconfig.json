@@ -2,7 +2,11 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@gluestack/docs": ["../.."]
+      "@gluestack/test-performance": ["../.."],
+      "@gluestack/popper": ["../../popper/src/index"],
+      "@gluestack/ui": ["./../ui/src/index"],
+      "@gluestack/ui-styled": ["../../styled/src/index"],
+      "@gluestack/color-mode": ["../../color-mode/src/index"]
     },
     "allowSyntheticDefaultImports": true,
     "jsx": "react-native",

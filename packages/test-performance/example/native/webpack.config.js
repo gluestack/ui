@@ -11,6 +11,8 @@ const workspaceRoot = findWorkspaceRoot(__dirname);
 const root = path.resolve(__dirname, '../..');
 const node_modules = path.join(workspaceRoot, 'node_modules');
 
+const creatorRoot = path.resolve(__dirname, '../../../creator');
+
 module.exports = async function (env, argv) {
   const config = await createExpoWebpackConfigAsync(env, argv);
 
@@ -25,6 +27,8 @@ module.exports = async function (env, argv) {
   Object.assign(config.resolve.alias, {
     ...resolver.extraNodeModules,
     'react-native-web': path.join(node_modules, 'react-native-web'),
+    '@gluestack/ui': path.join(node_modules, '@gluestack/ui'),
+    '@gluestack/ui-creator': path.join(node_modules, '@gluestack/ui-creator'),
   });
 
   // Maybe you want to turn off compression in dev mode.

@@ -25,6 +25,7 @@
     "react": "*",
     "react-dom": "*",
     "react-native": "*",
-    "react-native-web": "*"
+    "react-native-web": "*",
+    "@gluestack/ui": "*"
   }
 }

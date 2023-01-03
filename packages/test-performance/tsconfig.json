@@ -5,7 +5,11 @@
     "emitDeclarationOnly": true,
     "noEmit": false,
     "paths": {
-      "@gluestack/ui-creator": ["../ui/src/index"]
+      "@gluestack/ui-creator": ["../creator/src/index"],
+      "@gluestack/popper": ["../popper/src/index"],
+      "@gluestack/ui": ["./src/index"],
+      "@gluestack/ui-styled": ["../styled/src/index"],
+      "@gluestack/color-mode": ["../color-mode/src/index"]
     },
     "baseUrl": ".",
     "declaration": true,

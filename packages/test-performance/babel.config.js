@@ -7,10 +7,7 @@ module.exports = function (api) {
       [
         'module-resolver',
         {
-          alias: {
-            // For development, we want to alias the library to the source
-            ['@gluestack/docs']: path.join(__dirname, '../..'),
-          },
+          alias: {},
         },
       ],
     ],
