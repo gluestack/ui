@@ -18,8 +18,21 @@ module.exports = async function (env, argv) {
 
   config.module.rules.push({
     test: /\.(js|ts|tsx)$/,
-    include: path.resolve(root, 'src'),
-    use: 'babel-loader',
+    include: [
+      path.resolve(root, 'src'),
+      path.join(workspaceRoot, 'node_modules/@gluestack/ui'),
+    ],
+    // use: 'babel-loader',
+    use: {
+      loader: 'babel-loader',
+      options: {
+        presets: [
+          '@babel/preset-env',
+          '@babel/preset-react',
+          '@babel/preset-typescript',
+        ],
+      },
+    },
   });
 
   // We need to make sure that only one version is loaded for peerDependencies

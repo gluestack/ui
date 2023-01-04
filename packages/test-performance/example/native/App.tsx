@@ -1,14 +1,17 @@
 // import { StatusBar } from "expo-status-bar";
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 import React from 'react';
-import { Box } from '@gluestack/ui';
+import { GluestackUIProvider } from '@gluestack/ui';
+import { config } from './nb.config';
+import SkeletonLayout from './components/SkeletonLayout';
 // import { ButtonExpo } from "./button-expo";
 
 export default function App() {
   return (
-    <View style={{ flex: 1 }}>
-      <Text>Hello world!</Text>
-      <Box>hdhd</Box>
-    </View>
+    <GluestackUIProvider config={config}>
+      <View style={{ flex: 1 }}>
+        <SkeletonLayout />
+      </View>
+    </GluestackUIProvider>
   );
 }
