@@ -4,6 +4,9 @@ import { Image, HStack } from '@gluestack/ui';
 import Wrapper from '../Wrapper';
 import { Page } from '../../storybookDocsComponents/Page';
 
+const features = [];
+const apiReference = {};
+
 const MyImageMeta: ComponentMeta<typeof Image> = {
   title: 'MEDIA AND ICONS/Image',
   component: Image,
@@ -20,6 +23,8 @@ const MyImageMeta: ComponentMeta<typeof Image> = {
             title="Image"
             description="The **Image** component allows one to display images."
             componentName="Image"
+            apiReference={apiReference}
+            features={features}
           />
         </>
       ),

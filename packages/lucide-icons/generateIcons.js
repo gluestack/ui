@@ -169,7 +169,7 @@ export const ${cname} = React.memo(Icon);
     trailingComma: 'es5',
     arrowParens: 'always',
     parser: 'typescript',
-    semi: false,
+    semi: true,
   });
 
   const fileName = cname + '.tsx';

@@ -177,40 +177,44 @@ const ApiReference = ({ apiList }: any) => {
               >
                 {apiList[props].description}
               </Text>
-              <HStack borderBottomWidth={1} borderBottomColor="$muted200">
-                <Text
-                  color="trueGray800"
-                  fontSize="13px"
-                  fontWeight="400"
-                  flexBasis="30%"
-                  py="15px"
-                  pr="20px"
-                >
-                  Prop
-                </Text>
+              {apiList[props].props && (
+                <>
+                  <HStack borderBottomWidth={1} borderBottomColor="$muted200">
+                    <Text
+                      color="trueGray800"
+                      fontSize="13px"
+                      fontWeight="400"
+                      flexBasis="30%"
+                      py="15px"
+                      pr="20px"
+                    >
+                      Prop
+                    </Text>
 
-                <Text
-                  color="trueGray800"
-                  fontSize="13px"
-                  fontWeight="400"
-                  flexBasis="50%"
-                  py="15px"
-                  pr="20px"
-                >
-                  Type
-                </Text>
-                <Text
-                  color="trueGray800"
-                  fontSize="13px"
-                  fontWeight="400"
-                  flexBasis="20%"
-                  py="15px"
-                  pr="20px"
-                >
-                  Default
-                </Text>
-              </HStack>
-              <TableList props={apiList[props].props} />
+                    <Text
+                      color="trueGray800"
+                      fontSize="13px"
+                      fontWeight="400"
+                      flexBasis="50%"
+                      py="15px"
+                      pr="20px"
+                    >
+                      Type
+                    </Text>
+                    <Text
+                      color="trueGray800"
+                      fontSize="13px"
+                      fontWeight="400"
+                      flexBasis="20%"
+                      py="15px"
+                      pr="20px"
+                    >
+                      Default
+                    </Text>
+                  </HStack>
+                  <TableList props={apiList[props].props} />
+                </>
+              )}
             </VStack>
           );
         })}
