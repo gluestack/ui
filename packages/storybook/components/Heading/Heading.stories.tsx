@@ -14,8 +14,8 @@ const MyHeadingMeta: ComponentMeta<typeof Heading> = {
     },
   },
   args: {
-    text: `I'm the heading`,
-    size: '2xl',
+    text: `Heading `,
+    size: 'xs',
   },
 };
 
@@ -26,7 +26,12 @@ type MyHeadingStory = ComponentStory<typeof Heading>;
 export const Basic: MyHeadingStory = ({ ...props }) => {
   return (
     <Wrapper>
-      <Heading {...props}>{props.text}</Heading>
+      <Heading size="xs">{props.text} H6</Heading>
+      <Heading size="sm">{props.text} H5</Heading>
+      <Heading size="md">{props.text} H4</Heading>
+      <Heading size="lg">{props.text} H3</Heading>
+      <Heading size="xl">{props.text} H2</Heading>
+      <Heading size="2xl">{props.text} H1</Heading>
     </Wrapper>
   );
 };

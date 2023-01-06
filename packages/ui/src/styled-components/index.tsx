@@ -6,7 +6,14 @@ export { default as StyledButtonSpinner } from './StyledButton/StyledButtonSpinn
 export { default as StyledBox } from './StyledBox';
 export { default as StyledImage } from './StyledImage';
 export { default as StyledImageFallbackText } from './StyledImage/StyledImageFallbackText';
-export { default as StyledHeading } from './StyledHeading';
+export {
+  StyledH1,
+  StyledH2,
+  StyledH3,
+  StyledH4,
+  StyledH5,
+  StyledH6,
+} from './StyledHeading';
 export { default as StyledText } from './StyledText';
 export { default as StyledCenter } from './StyledCenter';
 export { default as StyledVStack } from './StyledVStack';

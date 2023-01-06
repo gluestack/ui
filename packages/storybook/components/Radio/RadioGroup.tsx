@@ -2,13 +2,7 @@ import React from 'react';
 /* eslint-disable no-console */
 import { Radio, CircleIcon, Center } from '@gluestack/ui';
 
-export const RadioGroup = ({
-  size,
-  isDisabled,
-  isInvalid,
-  isReadOnly,
-  ...props
-}) => {
+export const RadioGroup = ({ size, isDisabled, isInvalid, isReadOnly }) => {
   const [values, setValues] = React.useState('Label 1');
 
   return (
@@ -28,27 +22,7 @@ export const RadioGroup = ({
           onChange={(nextValue: boolean) => console.log(nextValue, 'nextValue')}
         >
           <Radio.Indicator>
-            <Radio.Icon
-              sx={{
-                // style: {
-                //   color: '$primary600',
-                // },
-                // state: {
-                //   focus: {
-                //     style: {
-                //       color: '$primary600',
-                //     },
-                //   },
-                // },
-                colorMode: {
-                  dark: {
-                    style: {
-                      color: '$primary600',
-                    },
-                  },
-                },
-              }}
-            >
+            <Radio.Icon>
               <CircleIcon />
             </Radio.Icon>
           </Radio.Indicator>

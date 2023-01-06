@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react-native';
-import { FormControl, Input, WarningIcon, Center } from '@gluestack/ui';
+import { FormControl, Input, WarningIcon, Box } from '@gluestack/ui';
 import Wrapper from '../Wrapper';
 
 const MyFormControlMeta: ComponentMeta<typeof FormControl> = {
@@ -34,35 +34,41 @@ type MyCustomFormControlStory = ComponentStory<typeof FormControl>;
 export const Basic: MyCustomFormControlStory = ({ ...props }) => {
   return (
     <Wrapper>
-      <FormControl {...props}>
-        {/* Label Message */}
-        <FormControl.Label>
-          <FormControl.Label.Text>Password</FormControl.Label.Text>
-        </FormControl.Label>
+      <Box>
+        <FormControl {...props}>
+          {/* Label Message */}
+          <FormControl.Label>
+            <FormControl.Label.Text>Password</FormControl.Label.Text>
+          </FormControl.Label>
 
-        <Input.Root>
-          <Input type="password" defaultValue="12345" placeholder="password" />
-        </Input.Root>
-
-        {/* Helper Text */}
-        <FormControl.Helper>
-          <FormControl.Helper.Text>
-            Must be atleast 6 characters.
-          </FormControl.Helper.Text>
-        </FormControl.Helper>
-
-        {/* Error Message */}
-        <FormControl.Error>
-          <FormControl.Error.Icon>
-            <WarningIcon
-              sx={{ style: { color: '$red500', height: '$3', width: '$3' } }}
+          <Input.Root>
+            <Input
+              type="password"
+              defaultValue="12345"
+              placeholder="password"
             />
-          </FormControl.Error.Icon>
-          <FormControl.Error.Text>
-            Atleast 6 characters are required.
-          </FormControl.Error.Text>
-        </FormControl.Error>
-      </FormControl>
+          </Input.Root>
+
+          {/* Helper Text */}
+          <FormControl.Helper>
+            <FormControl.Helper.Text>
+              Must be atleast 6 characters.
+            </FormControl.Helper.Text>
+          </FormControl.Helper>
+
+          {/* Error Message */}
+          <FormControl.Error>
+            <FormControl.Error.Icon>
+              <WarningIcon
+                sx={{ style: { color: '$red500', height: '$3', width: '$3' } }}
+              />
+            </FormControl.Error.Icon>
+            <FormControl.Error.Text>
+              Atleast 6 characters are required.
+            </FormControl.Error.Text>
+          </FormControl.Error>
+        </FormControl>
+      </Box>
     </Wrapper>
   );
 };

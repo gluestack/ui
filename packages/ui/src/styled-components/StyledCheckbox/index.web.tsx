@@ -29,7 +29,7 @@ export default styled(
     sizes: {
       lg: {
         descendants: {
-          _icon: { style: { height: '$5', width: '$5' } },
+          _icon: { style: { height: '$4', width: '$4' } },
           //@ts-ignore
           _text: { style: { fontSize: '$xl' } },
           _indicator: {
@@ -42,7 +42,7 @@ export default styled(
       },
       md: {
         descendants: {
-          _icon: { style: { height: '$4', width: '$4' } },
+          _icon: { style: { height: '$3', width: '$3' } },
           //@ts-ignore
           _text: { style: { fontSize: '$lg' } },
           _indicator: {
@@ -55,7 +55,7 @@ export default styled(
       },
       sm: {
         descendants: {
-          _icon: { style: { height: '$3', width: '$3' } },
+          _icon: { style: { height: '$2', width: '$2' } },
           //@ts-ignore
           _text: { style: { fontSize: '$md' } },
           _indicator: {

@@ -68,7 +68,9 @@ export const Sizes: SizeTextStory = () => {
   return (
     <Wrapper>
       {sizes.map((size: any) => (
-        <Text size={size}>{size}</Text>
+        <Text size={size} key={size}>
+          {size}
+        </Text>
       ))}
     </Wrapper>
   );
