@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react-native';
-import { Image, Input } from '@gluestack/ui';
+import { Image, Input, Link, Text } from '@gluestack/ui';
 import Wrapper from '../Wrapper';
 
 const MyInputMeta: ComponentMeta<typeof Input> = {
