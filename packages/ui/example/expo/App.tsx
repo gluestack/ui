@@ -12,6 +12,7 @@ import {
 } from '@gluestack/color-mode';
 import Navbar from './components/Navbar';
 import Main from './components/Main';
+import Footer from './components/Footer';
 
 window['setColorMode'] = setColorMode;
 window['getColorMode'] = getColorMode;
@@ -35,6 +36,7 @@ export default function App() {
     <GluestackUIProvider config={config}>
       <Navbar />
       <Main />
+      <Footer />
     </GluestackUIProvider>
   );
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, HStack, Text, Link, Button } from '@gluestack/ui';
+import { Box, HStack, Text, Button } from '@gluestack/ui';
 
 function Navbar() {
   return (

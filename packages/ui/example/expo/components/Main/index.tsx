@@ -1,17 +1,11 @@
 import React from 'react';
-import {
-  Box,
-  Button,
-  HStack,
-  LinearGradient,
-  Link,
-  Pressable,
-  Text,
-} from '@gluestack/ui';
+import { Box } from '@gluestack/ui';
 import Hero from './Hero';
 import Second from './Second';
 import Third from './Third';
 import Platform from './Platform';
+import Reviews from './Reviews';
+import Department from './Department';
 
 function Main() {
   return (
@@ -20,6 +14,8 @@ function Main() {
       <Second />
       <Third />
       <Platform />
+      <Department />
+      <Reviews />
     </Box>
   );
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Button, HStack, Image, Text } from '@gluestack/ui';
-const iphoneImage = require('./iphone.png');
+const iphoneImage = require('../../../assets/iphone.png');
 
 const Third = () => {
   return (

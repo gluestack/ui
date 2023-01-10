@@ -1,12 +1,13 @@
 import React from 'react';
-import { HStack, Pressable, Text } from '@gluestack/ui';
+import { HStack, Image, Pressable, Text } from '@gluestack/ui';
+const Logo = require('../../../assets/logo-header.png');
 
 function Header() {
   return (
     <HStack py="$8" justifyContent="space-between">
       {/* replace it with Link */}
       <Pressable>
-        <HStack space="sm">
+        {/* <HStack space="sm">
           <svg
             width="32"
             height="34"
@@ -55,7 +56,8 @@ function Header() {
               fill="#111111"
             />
           </svg>
-        </HStack>
+        </HStack> */}
+        <Image source={Logo} width={108} height={30} />
       </Pressable>
       <HStack space="md">
         <Pressable>

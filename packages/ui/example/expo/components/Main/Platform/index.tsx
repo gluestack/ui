@@ -1,35 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Box, Button, HStack, Image, Pressable, Text } from '@gluestack/ui';
-import Video from './Video';
+// import Video from './Video';
 import MapComponent from './MapComponent';
+const videoImage = require('../../../assets/video.png');
 
 function Platform() {
+  const [user, setUser] = useState('candidate');
+  const [process, setProcess] = useState('jobWalkin');
   return (
     <Box px="$32">
       <Box alignItems="center">
         <HStack p={10} bg="$trueGray200" borderRadius={10} space="md" mb={50}>
           <Button
-            bg="$blue600"
+            bg={user === 'candidate' ? '$blue600' : 'transparent'}
             variant="unstyled"
             borderRadius="$lg"
             px="$20"
             py="$5"
-          >
-            <Button.Text fontSize="$md" fontWeight="$semibold" color="$white">
-              Candidate
-            </Button.Text>
-          </Button>
-          <Button
-            bg="transparent"
-            variant="unstyled"
-            borderRadius="$lg"
-            px="$20"
-            py="$5"
+            onPress={() => setUser('candidate')}
           >
             <Button.Text
               fontSize="$md"
               fontWeight="$semibold"
-              color="$darkText"
+              color={user === 'candidate' ? '$white' : '$darkText'}
+            >
+              Candidate
+            </Button.Text>
+          </Button>
+          <Button
+            bg={user !== 'candidate' ? '$blue600' : 'transparent'}
+            variant="unstyled"
+            borderRadius="$lg"
+            px="$20"
+            py="$5"
+            onPress={() => setUser('employers')}
+          >
+            <Button.Text
+              fontSize="$md"
+              fontWeight="$semibold"
+              color={user !== 'candidate' ? '$white' : '$darkText'}
             >
               Employers
             </Button.Text>
@@ -70,7 +79,8 @@ function Platform() {
             requirement and should be accessible to all.
           </Text>
         </Box>
-        <Video />
+        {/* <Video /> */}
+        <Image source={videoImage} width={300} height={200} />
       </HStack>
       <HStack mb="$16">
         <Pressable
@@ -84,8 +94,10 @@ function Platform() {
           mr="$16"
           fontSize="$lg"
           fontWeight="$semibold"
-          borderBottomWidth={1}
-          marginTop={-8}
+          borderBottomWidth={process === 'jobWalkin' ? 1 : 0}
+          marginTop={process === 'jobWalkin' ? -8 : 0}
+          color={process === 'jobWalkin' ? '$black' : '#707070'}
+          onPress={() => setProcess('jobWalkin')}
         >
           Job Walkin
         </Pressable>
@@ -101,9 +113,12 @@ function Platform() {
             },
           }}
           mr="$16"
-          color="#707070"
           fontSize="$lg"
           fontWeight="$semibold"
+          borderBottomWidth={process === 'easyInteractions' ? 1 : 0}
+          marginTop={process === 'easyInteractions' ? -8 : 0}
+          color={process === 'easyInteractions' ? '$black' : '#707070'}
+          onPress={() => setProcess('easyInteractions')}
         >
           Easy Interactions
         </Pressable>
@@ -119,9 +134,12 @@ function Platform() {
             },
           }}
           mr="$16"
-          color="#707070"
+          borderBottomWidth={process === 'videoResume' ? 1 : 0}
+          marginTop={process === 'videoResume' ? -8 : 0}
+          color={process === 'videoResume' ? '$black' : '#707070'}
           fontSize="$lg"
           fontWeight="$semibold"
+          onPress={() => setProcess('videoResume')}
         >
           Video Resume
         </Pressable>
@@ -137,9 +155,12 @@ function Platform() {
             },
           }}
           mr="$16"
-          color="#707070"
+          borderBottomWidth={process === 'fees' ? 1 : 0}
+          marginTop={process === 'fees' ? -8 : 0}
+          color={process === 'fees' ? '$black' : '#707070'}
           fontSize="$lg"
           fontWeight="$semibold"
+          onPress={() => setProcess('fees')}
         >
           Fee’s
         </Pressable>
@@ -155,9 +176,12 @@ function Platform() {
             },
           }}
           mr="$16"
-          color="#707070"
+          borderBottomWidth={process === 'fast' ? 1 : 0}
+          marginTop={process === 'fast' ? -8 : 0}
+          color={process === 'fast' ? '$black' : '#707070'}
           fontSize="$lg"
           fontWeight="$semibold"
+          onPress={() => setProcess('fast')}
         >
           Fast
         </Pressable>
